@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Views - Django Rest Framework Docs Korean version</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Views";
+    var mkdocs_page_input_path = "Views.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Django Rest Framework Docs Korean version</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Requests/">Requests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Responses/">Responses</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Views</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#django-rest-framework-views">Django REST Framework - Views</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#class-based-views">Class-based Views</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Generic_views/">Generic views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ViewSets/">Viewsets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Routers/">Routers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Parsers/">Parsers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Renderers/">Renderers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializers/">Serializers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_fields/">Serializer fields</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_relations/">Serializer relations</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Validators/">Validators</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Authentication/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Permissions/">Permissions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Throttling/">Throttling</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Filtering/">Filtering</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Pagination/">Pagination</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Versioning/">Versioning</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Content_negotiation/">Content negotiation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Metadata/">Metadata</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Schemas/">Schemas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Format_suffixes/">Format suffixes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Returning_URLs/">Returning URLs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Exceptions/">Exceptions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Status_Codes/">Status codes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Settings/">Settings</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Django Rest Framework Docs Korean version</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Views</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django-rest-framework-views">Django REST Framework - Views</h1>
+<hr />
+<p><em>"Django's class-based views are a welcome departure from the old-style views."</em>  </p>
+<p><em>"Django의 CBV는 구식 뷰에서 출발하는 것을 환영합니다."</em>  </p>
+<p><em>— Reinout van Rees</em></p>
+<hr />
+<h2 id="class-based-views">Class-based Views</h2>
+<p>REST 프레임워크는 Django의 <code>View</code> 클래스를 하위 클래스로 하는 <code>APIView</code>클래스를 제공합니다.<br />
+<code>APIView</code>클래스는 다음과 같은 방식으로 일반 <code>View</code>클래스와 다릅니다.</p>
+<ul>
+<li>핸들러 메서드에 전달 된 <code>Request</code>는 Django의 <code>HttpRequest</code> 인스턴스가 아닌 REST 프레임워크의 <code>request</code>인스턴스가 됩니다.</li>
+<li>핸들러 메서드는 Django의 <code>HttpResponse</code> 대신 REST 프레임워크의 <code>Response</code>를 반환 할 수 있습니다. 뷰는 콘텐츠 협상을 관리하고 <code>response</code>에서 올바른 렌더러를 설정합니다.</li>
+<li>모든 <code>APIException</code> 예외가 발견되면 적절한 <code>response</code>으로 조정됩니다.</li>
+<li>들어오는 request가 인증이 된 request를 핸들러 메서드에 보내기 전에 적절한 권한과 <code>/</code> 또는 <code>throttle(제한)</code> 체크를 실행합니다.</li>
+</ul>
+<p><code>APIView</code> 클래스를 사용하는 것은 일반 <code>View</code>클래스를 사용하는 것과 거의 같습니다. 들어오는 request은 <code>.get()</code>이나 <code>.post()</code>와 같은 적절한 핸들러 메서드로 전달됩니다. 또한 API 정책의 다양한 측면을 제어하는 여러 속성을 클래스에 설정 할 수 있습니다.</p>
+<p>예를 들어:</p>
+<pre><code class="python">from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import authentication, permissions
+
+class ListUsers(APIView):
+    &quot;&quot;&quot;
+    View to list all users in the system.
+
+    * 토큰 인증이 필요합니다.
+    * 관리자만 view에 액서스 할 수 있습니다.
+    &quot;&quot;&quot;
+    authentication_classes = (authentication.TokenAuthentication,)
+    permission_classes = (permissions.IsAdminUser,)
+
+    def get(self, request, format=None):
+        &quot;&quot;&quot;
+        모든 사용자 리스트를 반환합니다.
+        &quot;&quot;&quot;
+        usernames = [user.username for user in User.objects.all()]
+        return Response(usernames)
+</code></pre>
+
+<h3 id="api-policy-attributesapi">API policy attributes(API 정책 속성)</h3>
+<p>다음 속성들은 API view의 플러그 가능한 부분을 제어합니다.<br />
+<code>.renderer_classes</code><br />
+<code>.parser_classes</code><br />
+<code>.authentication_classes</code><br />
+<code>.throttle_classes</code><br />
+<code>.permission_classes</code><br />
+<code>.content_negotiation_class</code>  </p>
+<h3 id="api-policy-instantiation-methodsapi">API policy instantiation methods(API 정책 인스턴스화 메서드)</h3>
+<p>다음 메서드들은 REST 프레임워크에서 다양한 플러그가 가능한 API 정책을 인스턴스화하는데 사용됩니다. 일반적으로 이러한 메서드를 재정의 할 필요는 없습니다.<br />
+<code>.get_renderers(self)</code><br />
+<code>.get_parsers(self)</code><br />
+<code>.get_authenticators(self)</code><br />
+<code>.get_throttles(self)</code><br />
+<code>.get_permissions(self)</code><br />
+<code>.get_content_negotiator(self)</code><br />
+<code>.get_exception_handler(self)</code>  </p>
+<h3 id="api-policy-implementation-methodsapi">API policy implementation methods(API 정책 구현 방법)</h3>
+<p>다음 메서드는 핸들러 메서드에 전달하기 전에 호출됩니다.<br />
+<code>.check_permissions(self, request)</code><br />
+<code>.check_throttles(self, request)</code><br />
+<code>.perform_content_negotiation(self, request, force=False)</code>  </p>
+<h3 id="dispatch-methods">Dispatch methods (파견 메서드)</h3>
+<p>다음 메서드는 뷰의 <code>.dispatch()</code>메서드에 의해 직접 호출됩니다. 이 메서드들은 <code>.get()</code>, <code>.post()</code>, <code>put()</code>, <code>patch()</code> 및 <code>.delete()</code>와 같은 핸들러 메서드들을 호출하기 전후에 수행되어야하는 모든 조치들을 수행합니다.  </p>
+<h4 id="initialself-request-args-kwargs"><code>.initial(self, request, *args, **kwargs)</code></h4>
+<p>핸들러 메서드가 호출되기 전에 발생해야하는 모든 작업을 수행합니다. 이 메서드는 사용 권한 및 제한을 적용하고 콘텐츠 협상을 수행하는데 사용됩니다.<br />
+일반적으로 이 메서드를 재정의 할 필요는 없습니다.</p>
+<h4 id="handle_exceptionself-exc"><code>.handle_exception(self, exc)</code></h4>
+<p>핸들러 메서드에 의해 버려진 예외는 <code>Resopnse</code>인스턴스를 반환하거나 예외를 다시 발생시키는 이 메서드로 전달됩니다.<br />
+기본 구현에서는 Django의 <code>Http404</code>와 <code>PermissionDenied</code>예외 뿐만 아니라 <code>rest_framework.exceptions.APIXeception</code>의 하위 클래스를 처리하고 적절한 오류 response를 반환합니다.<br />
+API에서 반환하는 오류 response를 사용자 정의해야하는 경우 이 메소드를 서브 클래스화해야 합니다.</p>
+<h4 id="initialize_requestself-request-args-kwargs"><code>.initialize_request(self, request, *args, **kwargs)</code></h4>
+<p>핸들러 메소드에 전달 된 request 객체가 일반적인 Django <code>HttpRequest</code>가 아닌 <code>Request</code>의 인스턴스인지 확인합니다.<br />
+일반적으로 이 메서드를 재정의 할 필요는 없습니다.  </p>
+<h4 id="finalize_responseself-request-response-args-kwargs"><code>.finalize_response(self, request, response, *args, **kwargs)</code></h4>
+<p>핸들러 메서드에서 반환 된 모든 <code>Response</code>객체가 내용 협상에 의해 결정된 대로 올바른 내용 유형으로 렌더링되도록 합니다.<br />
+일반적으로 이 메서드는 재정의 할 필요는 없습니다.</p>
+<hr />
+<h3 id="function-based-views">Function Based Views</h3>
+<p><em>"Saying [that class-based views] is always the superior solution is a mistake."</em><br />
+<em>"[그 클래스 기반의 견해]가 항상 우월한 해결책은 실수라고 말하는 것입니다."</em>  </p>
+<p><em>— Nick Coghlan</em>  </p>
+<p>REST 프레임워크를 사용하면 일반 FBV로 작업 할 수 있습니다. 그것은 간단한 Django <code>HttpRequest</code>가 아닌 <code>Request</code>의 인스턴스를 수신하고 Django <code>HttpResponse</code> 대신 <code>response</code>을 리턴 할 수 있도록 FBV를 래핑하는 간단한 데코레이터 세트를 제공하며, request가 처리됩니다.  </p>
+<h3 id="api_view">@api_view()</h3>
+<p><strong>Signature</strong>: <code>@api_view(http_method_names=['GET'], exclude_from_schema=False)</code><br />
+이 기능의 핵심은 <code>api_view</code>데코레이터(뷰가 응답해야하는 HTTP 메서드 리스트를 사용함)입니다. 예를 들어, 다음은 몇 가지 데이터를 수동으로 반환하는 아주 간단한 view를 작성하는 방법입니다.</p>
+<pre><code class="python">from rest_framework.decorators import api_view
+
+@api_view()
+def hello_world(request):
+    return Response({&quot;message&quot;: &quot;Hello, world!&quot;})
+</code></pre>
+
+<p>이 뷰는 <a href="http://www.django-rest-framework.org/api-guide/settings/">설정</a>에 지정된 기본 렌더러, 파서, 인증 클래스 등을 사용합니다.<br />
+기본적으로 <code>GET</code>메서드만 허용됩니다. 다른 메서드들은 "405 Method Not Allowed"로 응답합니다. 이 동작을 변경하려면 view에서 허용하는 방법을 지정하세요.</p>
+<pre><code class="python">@api_view(['GET', 'POST'])
+def hello_world(request):
+    if request.method == 'POST':
+        return Response({&quot;message&quot;: &quot;Got some data!&quot;, &quot;data&quot;: request.data})
+    return Response({&quot;message&quot;: &quot;Hello, world!&quot;})
+</code></pre>
+
+<p><code>exclude_from_schema</code>인수를 사용하여 API 뷰를 <a href="http://www.django-rest-framework.org/api-guide/schemas/">자동 생성 스키마(auto-generated schema)</a>에서 생략된 것으로 표시 할 수도 있습니다.</p>
+<pre><code class="python">@api_view(['GET'], exclude_from_schema=True)
+def api_docs(request):
+    ...
+</code></pre>
+
+<h3 id="api-policy-decorators">API policy decorators</h3>
+<p>기본 설정을 재정의하기 위해 REST 프레임워크는 뷰에 추가 할 수 있는 일련의 추가 데코레이터를 제공합니다. 이들은 <code>@api_view</code>데코레이터 다음에 와야합니다. 예를 들어, <a href="http://www.django-rest-framework.org/api-guide/throttling/"><code>throttle</code></a>을 사용하여 특정 사용자가 하루에 한번만 호출 할 수 있도록 뷰를 만들려면 <code>@thottle_classes</code>데코레이터를 사용하여 <code>throttle</code> 클래스 목록을 전달하세요.</p>
+<pre><code class="python">from rest_framework.decorators import api_view, throttle_classes
+from rest_framework.throttling import UserRateThrottle
+
+class OncePerDayUserThrottle(UserRateThrottle):
+        rate = '1/day'
+
+@api_view(['GET'])
+@throttle_classes([OncePerDayUserThrottle])
+def view(request):
+    return Response({&quot;message&quot;: &quot;Hello for today! See you tomorrow!&quot;})
+</code></pre>
+
+<p>이러한 데코레이터는 위에서 설명한 <code>APIView</code>하위 클래스에 설정된 특성에 해당합니다. 사용 가능한 데코레이터는 다음과 같습니다.  </p>
+<ul>
+<li><code>@renderer_classes(...)</code></li>
+<li><code>@parser_classes(...)</code></li>
+<li><code>@authentication_classes(...)</code></li>
+<li><code>@throttle_classes(...)</code></li>
+<li><code>@permission_classes(...)</code> </li>
+</ul>
+<p>이러한 데코레이터 각각은 클래스의 <code>list</code>나 <code>tuple</code>인 단일 인수를 취합니다.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Generic_views/" class="btn btn-neutral float-right" title="Generic views">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Responses/" class="btn btn-neutral" title="Responses"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Responses/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Generic_views/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

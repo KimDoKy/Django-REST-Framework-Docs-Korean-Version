@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Generic views - Django Rest Framework Docs Korean version</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Generic views";
+    var mkdocs_page_input_path = "Generic_views.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Django Rest Framework Docs Korean version</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Requests/">Requests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Responses/">Responses</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Views/">Views</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Generic views</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#django-rest-framework-generic-views">Django REST Framework - Generic views</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#generic-views">Generic views</a></li>
+        
+            <li><a class="toctree-l3" href="#api-reference">API Reference</a></li>
+        
+            <li><a class="toctree-l3" href="#mixins">Mixins</a></li>
+        
+            <li><a class="toctree-l3" href="#concrete-view-classes">Concrete View Classes</a></li>
+        
+            <li><a class="toctree-l3" href="#customizing-the-generic-views">Customizing the generic views</a></li>
+        
+            <li><a class="toctree-l3" href="#put-as-create">PUT as create</a></li>
+        
+            <li><a class="toctree-l3" href="#third-party-packages">Third party packages</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ViewSets/">Viewsets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Routers/">Routers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Parsers/">Parsers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Renderers/">Renderers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializers/">Serializers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_fields/">Serializer fields</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_relations/">Serializer relations</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Validators/">Validators</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Authentication/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Permissions/">Permissions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Throttling/">Throttling</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Filtering/">Filtering</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Pagination/">Pagination</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Versioning/">Versioning</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Content_negotiation/">Content negotiation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Metadata/">Metadata</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Schemas/">Schemas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Format_suffixes/">Format suffixes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Returning_URLs/">Returning URLs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Exceptions/">Exceptions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Status_Codes/">Status codes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Settings/">Settings</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Django Rest Framework Docs Korean version</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Generic views</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django-rest-framework-generic-views">Django REST Framework - Generic views</h1>
+<hr />
+<p><em>"Django’s generic views... were developed as a shortcut for common usage patterns... They take certain common idioms and patterns found in view development and abstract them so that you can quickly write common views of data without having to repeat yourself."</em><br />
+<em>"Django의 generic views... 일반적인 사용 패턴을 위한 지름길로 개발되었습니다... 그들은 view 개발에서 발견되는 특정 공통 관용구와 패턴을 취해서 반복함으로써 반복하지 않고도 공통된 데이터 view를 빠르게 작성할 수 있습니다."</em><br />
+<em>— Django Documentation</em></p>
+<hr />
+<h2 id="generic-views">Generic views</h2>
+<p>CBV의 주요 이점 중 하나는 재사용이 가능한 동작을 구성하는 것입니다. REST 프레임워크는 일반적으로 사용되는 패턴을 제공하는 다수의 dict에 빌드 된 view를 제공함으로써 이를 활용합니다.<br />
+REST 프레임워크에서 제공하는 generic view를 사용하면 데이터베이스 모델과 밀접하게 매핑되는 API 뷰를 빠르게 빌드 할 수 있습니다.<br />
+<code>generic views</code> 가 API의 요구 사항에 맞지 않으면 정규 <code>APIView</code>클래스를 사용하여 drop down 하거나 <code>generic views</code>에서 사용하는 <code>mixin</code>과 기본 클래스를 재사용하여, 자신만 재사용이 가능한 <code>generic views</code> set를 작성할 수 있습니다.</p>
+<h3 id="examples">Examples</h3>
+<p>일반적으로 <code>generic views</code>를 사용하는 경우 view를 무시하고 여러 클래스 속성을 설정합니다.</p>
+<pre><code class="python">from django.contrib.auth.models import User
+from myapp.serializers import UserSerializer
+from rest_framework import generics
+from rest_framework.permissions import IsAdminUser
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsAdminUser,)
+</code></pre>
+
+<p>보다 복잡한 경우에는 view 클래스의 다양한 메서드를 재정의 할 수도 있습니다. 예를 들면:</p>
+<pre><code class="python">class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsAdminUser,)
+
+    def list(self, request):
+        # Note the use of `get_queryset()` instead of `self.queryset`
+        queryset = self.get_queryset()
+        serializer = UserSerializer(queryset, many=True)
+        return Response(serializer.data)
+</code></pre>
+
+<p>매우 간단한 경우에는 <code>.as_view()</code>메서드를 사용하여 클래스 속성을 전달할 수 있습니다. 예를 들어, <code>URLconf</code>에 다음 항목이 포함 될 수 있습니다.</p>
+<pre><code class="python">url(r'^/users/', ListCreateAPIView.as_view(queryset=User.objects.all(), serializer_class=UserSerializer), name='user-list')
+</code></pre>
+
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="genericapiview">GenericAPIView</h3>
+<p>이 클래스는 REST 프레임워크의 <code>APIView</code> 클래스를 확장하여 기존 list view와 detail views에 일반적으로 필요한 동작을 추가합니다.<br />
+제공된 각각의 <code>generic views</code>는 <code>GenericAPIView</code>를 하나 이상의 <code>minxin</code>클래스와 결합하여 빌드됩니다.</p>
+<h4 id="attributes">Attributes</h4>
+<h5 id="basic-settings">Basic settings:</h5>
+<p>다음 속성은 기본 뷰 동작을 제어합니다.</p>
+<ul>
+<li><code>queryset</code> : 이 뷰에서 객체를 반환하는 데 사용해야 하는 쿼리셋입니다. 일반적으로 이 속성을 설정하거나 <code>get_queryset()</code>메서드를 대체해야합니다. 뷰 메서드를 오버라이드하는 경우, 이 속성에 직접 액서스하는 대신 <code>get_queryset()</code>을 호출하는 것이 중요합니다. 쿼리셋은 한번 평가되고 그 결과는 모든 후속 request에 대해 캐시됩니다.</li>
+<li><code>serializer_class</code> : 입력의 검증과 serializer 복원 및 출력 serializer에 사용하는 <code>serializer</code> 클래스입니다. 일반적으로 이 속성을 설정하거나 <code>get_serializer_class()</code>메소드를 대체해야 합니다.</li>
+<li><code>lookup_field</code> : 개별 모델 인스턴스의 object 조회를 수행 할 때 사용해야하는 모델 필드입니다. 기본값은 <code>'pk'</code>입니다. 하이퍼링크 된 API에 custom 값을 사용해야 하는 경우 API views와 serializer 클래스가 <code>lookup</code>필드를 설정해야 합니다.</li>
+<li><code>lookup_url_kwarg</code> : 객체 검색에 사용해야하는 URL 키워드 인수입니다. <code>URL conf</code>에는 이 값에 해당하는 키워드 인수가 포함되어야 합니다. 설정을 해제하면 <code>lookup_field</code>와 동일한 값을 사용합니다.</li>
+</ul>
+<h5 id="pagination">Pagination:</h5>
+<p>다음 속성은 list views와 함께 사용될 때 <code>pagination</code>을 제어하는데 사용됩니다.</p>
+<ul>
+<li><code>pagination_class</code> : 결과 목록을 지정할 때 사용해야하는 <code>pagination</code>클래스입니다. 기본값은 <code>'rest_framework.pagination.PageNumberPagination'</code>인 <code>DEFAULT_PAGINATION_CLASS</code>설정과 동일한 값입니다. <code>pagination_class=None</code>으로 설정하면 이 view에서 pagination을 사용할 수 없습니다.  </li>
+</ul>
+<h5 id="filtering">Filtering:</h5>
+<ul>
+<li><code>filter_backends</code> : 쿼리셋을 필터링하는데 사용해야하는 <code>filter backend</code>클래스의 list입니다. 기본값은 <code>DEFAULT_FILTER_BACKENDS</code>설정과 동일합니다.</li>
+</ul>
+<h4 id="method">Method</h4>
+<h5 id="base-methods">Base methods:</h5>
+<pre><code>get_queryset(self)
+</code></pre>
+
+<p><strong><code>list view</code></strong>에서 사용되는 쿼리셋을 돌려줍니다. <code>detail view</code> 안의 <code>lookup</code>의 베이스로 사용됩니다. <code>queryset</code>속성에 의해 지정된 쿼리셋을 리턴하는 것이 기본값입니다.<br />
+이 메서드는 <code>self.queryset</code>에 직접 액서스하는 대신 항상 사용되어야하며, <code>self.queryset</code>은 한번만 평가되고 그 결과는 모든 후속 요청에 캐시됩니다.<br />
+request를 작성하는 사용자에게 특정되는 쿼리셋 반환과 같은 동적 동작을 제공하도록 재정의 될 수 있습니다.</p>
+<p>예제:</p>
+<pre><code class="python">def get_queryset(self):
+    user = self.request.user
+    return user.accounts.all()
+</code></pre>
+
+<pre><code>get_object(self)
+</code></pre>
+
+<p><strong><code>detail views</code></strong>에 사용해야 하는 객체 인스턴스를 반환합니다. 기본적으로 <code>lookup_field</code> parameter를 사용하여 기본 쿼리셋을 필터링합니다.<br />
+둘 이상의 <code>URL kwarg</code>를 기반으로 하는  <code>object lookups</code>와 같이 복잡한 동작을 제공하기 위해 무시될 수 있습니다.</p>
+<p>예를 들어:</p>
+<pre><code class="python">def get_object(self):
+    queryset = self.get_queryset()
+    filter = {}
+    for field in self.multiple_lookup_fields:
+        filter[field] = self.kwargs[field]
+
+    obj = get_object_or_404(queryset, **filter)
+    self.check_object_permissions(self.request, obj)
+    return obj
+</code></pre>
+
+<p>API에 객체 수준 권한이 없으면 선택적으로 <code>self.check_object_permissions</code>를 제외하고 단순히 <code>get_object_or_404</code> lookup에서 객체를 반환 할 수 있습니다.</p>
+<pre><code>filter_queryset(self, queryset)
+</code></pre>
+
+<p><strong><code>serializer</code></strong>에 사용해야하는 클래스를 반환합니다. 기본값은 <code>serializer_class</code>속성을 반환하는 것입니다.<br />
+읽기와 쓰기 작업에 다른 serializer를 사용하거나 다른 유형의 사용자에게 다른 serializer를 제공하는 등의 동적 동작을 제공하기 위해 재정의 될 수 있습니다.</p>
+<p>예:</p>
+<pre><code class="python">def get_serializer_class(self):
+    if self.request.user.is_staff:
+        return FullAccountSerializer
+    return BasicAccountSerializer
+</code></pre>
+
+<h5 id="save-and-deletion-hooks">Save and deletion hooks:</h5>
+<p>다음과 같은 메서드가 <code>mixin</code>클래스에서 제공되며 object 저장이나 삭제 동작을 쉽게 대체 할 수 있습니다.</p>
+<ul>
+<li><code>perform_create(self, serializer)</code> : 새 object 인스턴스를 저장할 때 <code>CreateModelMixin</code>에 의해 호출됩니다.</li>
+<li><code>perform_update(self, serializer)</code> : 기존 object 인스턴스를 저장할 때 <code>UpdateModelMixin</code>에 의해 호출됩니다.</li>
+<li><code>perform_destroy(self, instance)</code> : object 인스턴스를 삭제할 때 <code>DestroyModelMixin</code>에 의해 호출됩니다.</li>
+</ul>
+<p>이러한 <code>hooks</code>는 request에 내포되어 있지만, 요청 데이터의 일부가 아닌 속성을 설정하는데 특히 유용합니다. 예를 들어, request 사용자를 기준으로 또는 URL 키워드 인수를 기반으로 object의 속성을 설정할 수 있습니다.</p>
+<pre><code class="python">def perform_create(self, serializer):
+    serializer.save(user=self.request.user)
+</code></pre>
+
+<p>또한 이러한 오버라이드 포인트는 확인 이메일을 보내거나 업데이트를 로깅하는 것과 같이 object 저장 전후에 발생하는 동작을 추가 할 때 특히 유용합니다.</p>
+<blockquote>
+<p>로깅 : 시스템을 작동할 때 시스템의 작동 상태의 기록,보존,시스템동작 분석들을 기록하는 것</p>
+</blockquote>
+<pre><code class="python">def perform_update(self, serializer):
+    instance = serializer.save()
+    send_email_confirmation(user=self.request.user, modified=instance)
+</code></pre>
+
+<p><code>ValidationError()</code>를 발생시켜 추가 유효성 검사를 제공하기 위해 이러한 <code>hooks</code>을 사용할 수도 있습니다. 데이터베이스 저장 시점에 적용 할 유효성 검증 로직이 필요한 경우 유용 할 수 있습니다.</p>
+<pre><code class="python">def perform_create(self, serializer):
+    queryset = SignupRequest.objects.filter(user=self.request.user)
+    if queryset.exists():
+        raise ValidationError('You have already signed up')
+    serializer.save(user=self.request.user)
+</code></pre>
+
+<p><strong>Note</strong>: 이 메서드는 이전 버전(2.x)의 <code>pre_save</code>, <code>post_save</code>, <code>pre_delete</code>와 <code>post_delete</code>메서드를 대체하며 더 이상 사용할 수 없습니다.  </p>
+<h5 id="other-methods">Other methods:</h5>
+<p><code>GenericAPIView</code>를 사용하여 custom views를 작성하는 경우, 호출할 수도 있지만 일반적으로 다음의 메서드를 대체하야 할 필요는 없습니다.</p>
+<ul>
+<li><code>get_serializer_context(self)</code> : serializer에 제공되어야 하는 추가 컨텐스트가 포함된 dict를 반환합니다. 기본값엔 <code>request</code>, <code>view</code>, <code>format</code> 키가 포합됩니다.</li>
+<li><code>get_serializer(self, instance=None, data=None, many=False, partial=False)</code> : serializer 인스턴스를 반환합니다.</li>
+<li><code>get_paginated_response(self, data)</code> : pagination 스타일의 response object를 반환합니다.</li>
+<li><code>paginate_queryset(self, queryset)</code> : 필요하면, <code>paginate_queryset</code>에 page object를 반환하거나, 이 view에 pagination이 구성되지 않은 경우 None을 반환합니다.</li>
+<li><code>filter_queryset(self, queryset)</code> : 주어진 쿼리셋을 사용중인 필터 백엔드를 사용하여 새로운 쿼리셋을 반환합니다.</li>
+</ul>
+<hr />
+<h2 id="mixins">Mixins</h2>
+<p><code>mixin</code>클래스는 기본 view 동작을 제공하는데 사용되는 작업을 제공합니다. <code>mixin</code>클래스는 <code>.get()</code>와 <code>.post()</code>와 같은 핸들러 메서드를 직접 정의하는 것이 아니라 작업 메서드를 제공합니다. 이것은 보다 유연한 작동 구성을 가능하게 합니다.<br />
+<code>mixin</code>클래스는 <code>rest_framework.mixins</code>에서 가져 올 수 있습니다.</p>
+<h3 id="listmodelmixin">ListModelMixin</h3>
+<p>쿼리셋 list를 구현하는 <code>.list(request, *args, **kwargs)</code>메서드를 제공합니다.<br />
+쿼리셋이 채워지면 response의 본문으로 쿼리셋의 serializer 된 표현과 함께 <code>200 OK</code>응답을 반환합니다. response 데이터는 선택적으로 페이징 될 수 있습니다.</p>
+<h3 id="createmodelmixin">CreateModelMixin</h3>
+<p>새 모델 인스턴스 만들기 및 저장을 구현하는 <code>.create(request, *args, **kwargs)</code>메서드를 제공합니다.<br />
+객체가 생성되면 객체의 serializer 된 표현을 response의 본문으로 사용하여 <code>201 Created</code>응답을 반환합니다. 표현에 <code>url</code>이라는 키가 포함되어 있으면 response의 <code>Location</code> 헤더가 해당 값으로 채워집니다.<br />
+객체 생성을 위해 제공된 request 데이터가 유효하지 않은 경우 <code>400 Bad Request</code>응답이 반환되며, 오류 내역은 response 본문으로 반환됩니다.</p>
+<h3 id="retrievemodelmixin">RetrieveModelMixin</h3>
+<p>response에서 기존 모델 인스턴스를 반환하도록 구현하는 <code>.retrieve(request, *args, **kwargs)</code>메서드를 반환합니다.<br />
+객체를 검색 할 수 있는 경우 <code>200 OK</code>응답을 반환하며, 객체를 response 본문으로 serializer하여 반환합니다.</p>
+<h3 id="updatemodelmixin">UpdateModelMixin</h3>
+<p>기존 모델 인스턴스를 업데이트하고 저장하는 <code>.update(request, *args, **kwargs)</code>메서드를 제공합니다.<br />
+또한 <code>update</code>메소드와 유사한 <code>.partial_update(request, *args, **kwargs)</code>메소드도 제공합니다. 단, 업데이트의 모든 필드는 선택사항입니다. 이렇게 하면 HTTP<code>PATCH</code>request를 지원할 수 있습니다.<br />
+객체가 업데이트되면 객체의 serializer 된 표현이 응답 본문과 함께 <code>200 OK</code>응답을 반환합니다.<br />
+객체를 업데이트하기 위해 제공된 request 데이터가 유효하지 않은 경우 <code>400  Bad Request</code>응답이 반환되고 오류 세부 정보가 response 본문으로 사용됩니다.</p>
+<h3 id="destroymodelmixin">DestroyModelMixin</h3>
+<p>기존 모델 인스턴스의 삭제를 구현하는 <code>.destroy(request, *args, **kwargs)</code>메서드를 제공합니다.<br />
+객체가 삭제되면 <code>204 No Content</code>응답을 반환하고, 그렇지 않으면 <code>404 Not Found</code>을 반환합니다.</p>
+<hr />
+<h2 id="concrete-view-classes">Concrete View Classes</h2>
+<p>다음의 클래스는 구체적인 <code>generic views</code>입니다. <code>generic views</code>를 사용하는 경우 일반적을 커스터마이징 된 동작이 필요하지 않으면 할만한 수준입니다.<br />
+뷰 클래스는 <code>rest_framework.generics</code>에서 가져올 수 있습니다.</p>
+<h3 id="createapiview">CreateAPIView</h3>
+<p><strong>읽기 전용</strong> 엔드포인트에 사용됩니다.<br />
+<code>post</code> 메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#createmodelmixin">CreateModelMixin</a></p>
+<h3 id="listapiview">ListAPIView</h3>
+<p><strong>읽기 전용</strong> 엔드포인트가 <strong>모델 인스턴스의 콜렉션</strong>을 나타내는데 사용됩니다.<br />
+<code>get</code> 메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#listmodelmixin">ListModelMixin</a></p>
+<h3 id="retrieveapiview">RetrieveAPIView</h3>
+<p><strong>읽기 전용</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데  사용됩니다.<br />
+<code>get</code>메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#retrievemodelmixin">RetrieveModelMixin</a></p>
+<h3 id="destroyapiview">DestroyAPIView</h3>
+<p><strong>삭제 전용</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데 사용됩니다.<br />
+<code>delete</code>메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#destroymodelmixin">DestroyModelMixin</a></p>
+<h3 id="updateapiview">UpdateAPIView</h3>
+<p><strong>업데이트 전용</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데 사용됩니다.<br />
+<code>put</code>과 <code>patch</code>메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#updatemodelmixin">UpdateModelMixin</a></p>
+<h3 id="listcreateapiview">ListCreateAPIView</h3>
+<p><strong>읽기-쓰기</strong> 엔드포인트가 <strong>모델 인스턴스의 컬렉션</strong>를 나타내는데 사용됩니다.<br />
+<code>get</code>과 <code>post</code> 메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#listmodelmixin">ListModelMixin</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#createmodelmixin">CreateModelMixin</a></p>
+<h3 id="retrieveupdateapiview">RetrieveUpdateAPIView</h3>
+<p><strong>읽거나 업데이트</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데 사용됩니다.<br />
+<code>get</code>, <code>put</code>, <code>patch</code> 메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#retrievemodelmixin">RetrieveModelMixin</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#updatemodelmixin">UpdateModelMixin</a></p>
+<h3 id="retrievedestroyapiview">RetrieveDestroyAPIView</h3>
+<p><strong>읽거나 삭제</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데 사용됩니다.<br />
+<code>get</code>과 <code>delete</code>메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#retrievemodelmixin">RetrieveModelMixin</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#destroymodelmixin">DestroyModelMixin</a></p>
+<h3 id="retrieveupdatedestroyapiview">RetrieveUpdateDestroyAPIView</h3>
+<p><strong>읽기-쓰기-삭제</strong> 엔드포인트가 <strong>단일 모델 인스턴스</strong>를 나타내는데 사용됩니다.<br />
+<code>get</code>, <code>put</code>, <code>patch</code>, <code>delete</code>메서드 핸들러를 제공합니다.<br />
+Extends: <a href="http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview">GenericAPIView</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#retrievemodelmixin">RetrieveModelMixin</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#updatemodelmixin">UpdateModelMixin</a>, <a href="http://www.django-rest-framework.org/api-guide/generic-views/#destroymodelmixin">DestroyModelMixin</a></p>
+<hr />
+<h2 id="customizing-the-generic-views">Customizing the generic views</h2>
+<p>종종 기본 generic views를 사용하고 약간 custom 된 동작을 사용하려고 합니다. 여러 위치에서 custom 된 동작을 재사용하는 경우, 동작을 공통 클래스로 리팩토링하여 필요할 때 모든 view나 viewset에 적용할 수 있습니다.</p>
+<h3 id="creating-custom-mixins">Creating custom mixins</h3>
+<p>예를 들어, URL conf 내의 복수의 필드에 근거해 오브젝트를 검색 할 필요가 있는 경우, 다음과 같이 <code>mixin</code> 클래스를 작성할 수 있습니다.</p>
+<pre><code class="python">class MultipleFieldLookupMixin(object):
+    &quot;&quot;&quot;
+    Apply this mixin to any view or viewset to get multiple field filtering
+    based on a `lookup_fields` attribute, instead of the default single field filtering.
+    &quot;&quot;&quot;
+    def get_object(self):
+        queryset = self.get_queryset()             # 기본 쿼리셋 가져오기
+        queryset = self.filter_queryset(queryset)  # backends에서 필터 적용
+        filter = {}
+        for field in self.lookup_fields:
+            if self.kwargs[field]: # 빈 필드는 무시
+                filter[field] = self.kwargs[field]
+        return get_object_or_404(queryset, **filter)  # 객체를 찾는다
+</code></pre>
+
+<p>그런 다음 custom 동작을 적용해야 할때 mixin을 view나 viewset에 간단하게 적용할 수 있습니다.</p>
+<pre><code class="python">class RetrieveUserView(MultipleFieldLookupMixin, generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_fields = ('account', 'username')
+</code></pre>
+
+<p>사용해야 하는 custom 동작이 있는 경우, custom mixin을 사용하는 것이 좋습니다.</p>
+<h3 id="creating-custom-base-classes">Creating custom base classes</h3>
+<p>여러 views에서 mixin을 사용하는 경우, 이 단계를 더 진행하고 프로젝트 전체에서 사용할 수 있는 고유한 기본 views set을 만들 수 있습니다. 예를 들어:</p>
+<pre><code class="python">class BaseRetrieveView(MultipleFieldLookupMixin,
+                       generics.RetrieveAPIView):
+    pass
+
+class BaseRetrieveUpdateDestroyView(MultipleFieldLookupMixin,
+                                    generics.RetrieveUpdateDestroyAPIView):
+    pass
+</code></pre>
+
+<p>프로젝트 전반에 걸쳐 많은 수의 views에서 일관되게 반복해야 하는 custom 동작이 있는 경우, custom 기본 클래스를 사용하는 것이 좋습니다.</p>
+<hr />
+<h2 id="put-as-create">PUT as create</h2>
+<p>버전 3.0 이전에는 객체가 이미 존재하는지 여부에 따라 REST 프레임워크 mixins가 <code>PUT</code>을 업데이트나 작성 작업으로 처리했습니다.<br />
+생성 작업으로 <code>PUT</code>을 허용하는 것은 객체의 존재나 부재에 대한 정보를 반드시 노출시키기 때문에 문제가 됩니다. 또한 이전에 삭제 된 인스턴스를 투명하게 다시 만들수 있다는 것이 단순히 <code>404</code>응답을 반환하는 것보다 더 나은 기본 동작이라고 할 수만은 없습니다.<br />
+"<code>PUT</code> as 404"와 "<code>PUT</code> as create"는 서로 다른 상황에서 유효 할 수 있지만, 버전 3.0부터는 더 간단하고 명확한 404 동작을 기본값으로 사용합니다.<br />
+일반적인 <code>PUT-as-create</code>동작이 필요한 경우 <code>AllowPUTAsCreateMixin</code>클래스를 views에 mixin으로 포함할 수 있습니다.</p>
+<hr />
+<h2 id="third-party-packages">Third party packages</h2>
+<p>다음의 타사 패키지는 추가 generic view 구현을 제공합니다.</p>
+<h3 id="django-rest-framework-bulk">Django REST Framework bulk</h3>
+<p><a href="https://github.com/miki725/django-rest-framework-bulk">django-rest-framework-bulk</a>패키지는 API request을 통해 대량 작업을 적용할 수 있도록 generic views mixin 뿐만 아니라 일반적인 구체적 generic views를 구현합니다.</p>
+<h3 id="django-rest-multiple-models">Django Rest Multiple Models</h3>
+<p><a href="https://github.com/Axiologue/DjangoRestMultipleModels">Django Rest Multiple Models</a>은 단일 API request을 통해 여러 serializer된 모델 및 <code>/</code> 또는 쿼리셋을 전송하기 위한 generic views(and mixin)을 제공합니다.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ViewSets/" class="btn btn-neutral float-right" title="Viewsets">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Views/" class="btn btn-neutral" title="Views"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Views/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ViewSets/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

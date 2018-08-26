@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Serializer relations - Django Rest Framework Docs Korean version</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Serializer relations";
+    var mkdocs_page_input_path = "Serializer_relations.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Django Rest Framework Docs Korean version</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Requests/">Requests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Responses/">Responses</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Views/">Views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Generic_views/">Generic views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ViewSets/">Viewsets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Routers/">Routers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Parsers/">Parsers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Renderers/">Renderers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializers/">Serializers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_fields/">Serializer fields</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Serializer relations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#django-rest-framework-serializer-relations">Django REST framework - Serializer relations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#serializer-relations">Serializer relations</a></li>
+        
+            <li><a class="toctree-l3" href="#api-reference">API Reference</a></li>
+        
+            <li><a class="toctree-l3" href="#nested-relationships">Nested relationships</a></li>
+        
+            <li><a class="toctree-l3" href="#custom-relational-fields">Custom relational fields</a></li>
+        
+            <li><a class="toctree-l3" href="#custom-hyperlinked-fields">Custom hyperlinked fields</a></li>
+        
+            <li><a class="toctree-l3" href="#further-notes">Further notes</a></li>
+        
+            <li><a class="toctree-l3" href="#third-party-packages">Third Party Packages</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Validators/">Validators</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Authentication/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Permissions/">Permissions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Throttling/">Throttling</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Filtering/">Filtering</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Pagination/">Pagination</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Versioning/">Versioning</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Content_negotiation/">Content negotiation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Metadata/">Metadata</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Schemas/">Schemas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Format_suffixes/">Format suffixes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Returning_URLs/">Returning URLs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Exceptions/">Exceptions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Status_Codes/">Status codes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Settings/">Settings</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Django Rest Framework Docs Korean version</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Serializer relations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django-rest-framework-serializer-relations">Django REST framework - Serializer relations</h1>
+<hr />
+<p><em>"Bad programmers worry about the code. Good programmers worry about data structures and their relationships."</em>  </p>
+<p><em>"나쁜 프로그래머는 코드에 대해 걱정합니다. 좋은 프로그래머는 데이터 구조와 그 관계에 대해 걱정합니다."</em>  </p>
+<p><em>— Linus Torvalds</em></p>
+<hr />
+<h2 id="serializer-relations">Serializer relations</h2>
+<p>relational field는 모델 관계를 나타내는데 사용됩니다. <code>ForeignKey</code>, <code>ManyToManyField</code> 및 <code>OneToOneField</code> 관계는 물론 관계 및  custom 관계 (예 : <code>GenericForeignKey</code>)를 역으로 적용 할 수 있습니다.</p>
+<hr />
+<p><strong>Note</strong>: 관계형 필드는 <code>relations.py</code>에 선언되어 있지만, 관습에 따라 <code>serializer</code> 모듈에서 가져와야하며, <code>rest_framework import serializer</code>에서 사용하고 <code>serializer.&lt;FiledName&gt;</code> 로 필드를 참조해야합니다.</p>
+<hr />
+<h3 id="inspecting-relationships">Inspecting relationships.</h3>
+<p><code>ModelSerializer</code> 클래스를 사용하면 serializer 필드와 관계가 자동으로 생성됩니다. 이러한 자동 생성 필드를 검사하는 것은 관계 스타일을 custom하는 방법을 결정하는데 유용한 도구가 될 수 있습니다.<br />
+이렇게 하려면, Django의 쉘을 열고, <code>python manage.py shell</code>을 사용하고, serializer 클래스를 가져와서 인스턴스화하고, 객체 표현을 출력하세요.</p>
+<pre><code class="python">&gt;&gt;&gt; from myapp.serializers import AccountSerializer
+&gt;&gt;&gt; serializer = AccountSerializer()
+&gt;&gt;&gt; print repr(serializer)  # Or `print(repr(serializer))` in Python 3.x.
+AccountSerializer():
+    id = IntegerField(label='ID', read_only=True)
+    name = CharField(allow_blank=True, max_length=100, required=False)
+    owner = PrimaryKeyRelatedField(queryset=User.objects.all())
+</code></pre>
+
+<h2 id="api-reference">API Reference</h2>
+<p>다양한 유형의 관계 필드를 설명하기 위해 예제에 몇가지 간단한 모델을 사용합니다. 우리 모델은 음악 앨범과 각 앨범에 수록된 트랙을 대상으로 합니다.  </p>
+<pre><code class="python">class Album(models.Model):
+    album_name = models.CharField(max_length=100)
+    artist = models.CharField(max_length=100)
+
+class Track(models.Model):
+    album = models.ForeignKey(Album, related_name='tracks', on_delete=models.CASCADE)
+    order = models.IntegerField()
+    title = models.CharField(max_length=100)
+    duration = models.IntegerField()
+
+    class Meta:
+        unique_together = ('album', 'order')
+        ordering = ['order']
+
+    def __unicode__(self):
+        return '%d: %s' % (self.order, self.title)
+</code></pre>
+
+<h3 id="stringrelatedfield">StringRelatedField</h3>
+<p><code>StringRelatedField</code>는 <code>__unicode__</code>메서드를 사용하여 관계의 대상을 나타내는데 사용할 수 있습니다.<br />
+예를 들어 다음 serializer와 같습니다.</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    tracks = serializers.StringRelatedField(many=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>다음과 같은 표현으로 serializer합니다.</p>
+<pre><code class="python">{
+    'album_name': 'Things We Lost In The Fire',
+    'artist': 'Low',
+    'tracks': [
+        '1: Sunflower',
+        '2: Whitetail',
+        '3: Dinosaur Act',
+        ...
+    ]
+}
+</code></pre>
+
+<p>이 필드는 읽기 전용입니다.  </p>
+<p><strong>Arguments</strong>:  </p>
+<ul>
+<li><code>many</code> : to-many 관계에 적용되면 이 인수는 <code>True</code>로 설정해야합니다.</li>
+</ul>
+<h3 id="primarykeyrelatedfield">PrimaryKeyRelatedField</h3>
+<p><code>primaryKeyRelatedField</code>는 primary key를 사용하여 관계의 대상을 나타내는데 사용할 수 있습니다.<br />
+예를 들어 다음 serializer가 있습니다.</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    tracks = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>다음과 같이 표현할 수 있습니다.</p>
+<pre><code class="python">{
+    'album_name': 'Undun',
+    'artist': 'The Roots',
+    'tracks': [
+        89,
+        90,
+        91,
+        ...
+    ]
+}
+</code></pre>
+
+<p>기본적으로 이 필드는 읽기전용이지만, <code>read_only</code>플래그를 사용하여 이 동작을 변경할 수 있습니다.  </p>
+<p><strong>Arguments</strong>:  </p>
+<ul>
+<li><code>queryset</code> : 필드 입력의 유효성을 검사 할 때 모델 인스턴스 조회에 사용되는 쿼리 세트입니다. 관계는 명시적으로 쿼리 세트를 설정하거나 <code>read_only=True</code>로 설정해야합니다.</li>
+<li><code>many</code> : to-many 관계에 적용되면이 인수를 <code>True</code>로 설정해야합니다.</li>
+<li><code>allow_null</code> : <code>True</code>로 설정하면 필드에 <code>None</code> 값 또는 null 허용 관계에 대한 빈 문자열을 허용합니다. 기본값은 <code>False</code>입니다.</li>
+<li><code>pk_field</code> : primary key 값의 serialzier/deserializer를 제어하는 ​​필드로 설정합니다. 예를 들어 ₩pk_field=UUIDField(format='hex')₩는 UUID primary key를 컴팩트 16 진수 표현으로 serializer화합니다.</li>
+</ul>
+<h3 id="hyperlinkedrelatedfield">HyperlinkedRelatedField</h3>
+<p><code>HyperlinkedRelatedField</code>는 하이퍼링크를 사용하여 관계의 대상을 나타내는데 사용할 수 있습니다.<br />
+예를 들어 다음 serializer가 있습니다.</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    tracks = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='track-detail'
+    )
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>다음과 같이 표현할 수 있습니다.</p>
+<pre><code class="python">{
+    'album_name': 'Graceland',
+    'artist': 'Paul Simon',
+    'tracks': [
+        'http://www.example.com/api/tracks/45/',
+        'http://www.example.com/api/tracks/46/',
+        'http://www.example.com/api/tracks/47/',
+        ...
+    ]
+}
+</code></pre>
+
+<p>기본적으로 이 필드는 읽기전용이지만, <code>read_only</code>플래그를 사용하여 이 동작을 변경할 수 있습니다.</p>
+<hr />
+<p><strong>Note</strong>: 이 필드는 <code>lookup_field</code> 및 <code>lookup_url_kwarg</code> 인수를 사용하여 설정된대로 단일 URL 키워드 인수를 허용하는 URL에 매핑되는 개체를 위해 설계되었습니다.<br />
+URL의 일부로 단일 primary key 또는 slug 인수가 포함된 URL에 적합힙니다.<br />
+보다 복잡한 하이퍼 링크로 표현이 필요한 경우에는 아래의 <a href="http://www.django-rest-framework.org/api-guide/relations/#custom-hyperlinked-fields">custom hyperlinked field</a>섹션에 설명 된대로 custom해야 합니다.</p>
+<hr />
+<p><strong>Arguments</strong>:  </p>
+<ul>
+<li><code>view_name</code> : 관계의 대상으로 사용해야하는 view 이름입니다. <a href="">표준 라우터 클래스</a>를 사용하는 경우 <code>&lt;modelname&gt;-detail</code> 형식의 문자열이 됩니다. <strong>필수.</strong></li>
+<li><code>queryset</code> : 필드 입력의 유효성을 검사 할 때 모델 인스턴스 조회에 사용되는 쿼리셋입니다. 관계는 명시적으로 쿼리셋을 설정하거나 <code>read_only=True</code>로 설정해야합니다.</li>
+<li><code>many</code> - to-many 관계에 적용되면 이 인수를 <code>True</code>로 설정해야합니다.</li>
+<li><code>allow_null</code> : <code>True</code>로 설정하면 필드에 <code>None</code> 값 또는 null 허용 관계에 대한 빈 문자열을 허용합니다. 기본값은 <code>False</code>입니다.</li>
+<li><code>lookup_field</code> : 조회에 사용해야하는 대상의 필드입니다. 참조 된 뷰의 URL 키워드 인수에 해당해야합니다. 기본값은 <code>pk</code>입니다.</li>
+<li><code>lookup_url_kwarg</code> : 조회 필드에 해당하는 URL conf에 정의된 키워드 인수의 이름입니다. 기본적으로 <code>lookup_field</code>와 같은 값을 사용합니다.</li>
+<li><code>format</code> : format suffix를 사용하는 경우, 하이퍼 링크 된 필드는 <code>format</code>인수를 사용하여 오버라이드하지 않는 한 대상에 대해 동일한 format suffix를 사용합니다.</li>
+</ul>
+<h3 id="slugrelatedfield">SlugRelatedField</h3>
+<p><code>slugRelatedField</code>는 대상 필드를 사용하여 관계 대상을 나타내는데 사용할 수 있습니다.<br />
+예를 들어 다음 serializer가 있습니다.</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    tracks = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field='title'
+     )
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>다음과 같이 표현할 수 있습니다.</p>
+<pre><code class="python">{
+    'album_name': 'Dear John',
+    'artist': 'Loney Dear',
+    'tracks': [
+        'Airport Surroundings',
+        'Everything Turns to You',
+        'I Was Only Going Out',
+        ...
+    ]
+}
+</code></pre>
+
+<p>기본적으로 이 필드는 읽기 전용이지만, <code>read_only</code>플래그를 사용하여 이 동작을 변경할 수 있습니다.<br />
+<code>SlugRelatedField</code>를 read-write 필드로 사용할 때는 일반적으로 slug 필드가 <code>unique=True</code>인 모델 필드에 해당하는지 확인해야합니다.  </p>
+<p><strong>Arguments</strong>:  </p>
+<ul>
+<li><code>slug_field</code> : 그것을 나타내는데 사용해야하는 대상의 필드입니다. 주어진 인스턴스를 고유하게 식별하는 필드이어야 합니다. 예: <code>username</code>. <strong>필수</strong></li>
+<li><code>queryset</code> : 필드 입력의 유효성을 검사 할 때 모델 인스턴스 조회에 사용되는 쿼리셋입니다. 관계는 명시적으로 쿼리셋을 설정하거나 <code>read_only=True</code>로 설정해야 합니다.</li>
+<li><code>many</code> : to-many 관계에 적용되면 이 인수를 <code>True</code>로 설정해야합니다.</li>
+<li><code>allow_null</code> : <code>True</code>로 설정하면 필드에 <code>None</code> 값 또는 null 허용 관계에 대한 빈 문자열을 허용합니다. 기본값은 <code>False</code>입니다.</li>
+</ul>
+<h3 id="hyperlinkedidentityfield">HyperlinkedIdentityField</h3>
+<p>이 필드는 <code>HyperlinkedModelSerializer</code>의 <code>url</code>필드와 같은 동일한 관계로 적용될 수 있습니다. 객체의 속성에도 사용할 수 있습니다. 예를 들어, 다음 serializer가 있습니다.  </p>
+<pre><code class="python">class AlbumSerializer(serializers.HyperlinkedModelSerializer):
+    track_listing = serializers.HyperlinkedIdentityField(view_name='track-list')
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'track_listing')
+</code></pre>
+
+<p>다음과 같이 표현할 수 있습니다.</p>
+<pre><code class="python">{
+    'album_name': 'The Eraser',
+    'artist': 'Thom Yorke',
+    'track_listing': 'http://www.example.com/api/track_list/12/',
+}
+</code></pre>
+
+<p>이 필드는 항상 읽기 전용입니다.  </p>
+<p><strong>Arguments</strong>:  </p>
+<ul>
+<li><code>view_name</code> : 관계의 대상으로 사용해야하는 view 이름입니다. 표준 라우터 클래스를 사용하는 경우 <code>&lt;model_name&gt;-detail</code> 형식의 문자열이 됩니다. <strong>필수</strong></li>
+<li><code>lookup_field</code> : 조회에 사용해야하는 대상의 필드입니다. 참조 된 뷰의 URL 키워드 인수에 해당해야합니다. 기본값은 <code>'pk'</code>입니다.</li>
+<li><code>lookup_url_kwarg</code> : 조회 필드에 해당하는 URL conf에 정의 된 키워드 인수의 이름입니다. 기본적으로 <code>lookup_field</code>와 같은 값을 사용합니다.</li>
+<li><code>format</code> -  format suffix를 사용하는 경우 하이퍼 링크 된 필드는 <code>format</code> 인수를 사용하여  오버라이드하지 않는한 대상에 대해 동일한  format suffix를 사용합니다.</li>
+</ul>
+<hr />
+<h2 id="nested-relationships">Nested relationships</h2>
+<p>중첩 된 관계는 serializer를 필드로 사용하여 표현할 수 있습니다.<br />
+필드가 to-many 관계를 나타내는데 사용되는 경우 serializer필드에 <code>many=True</code>플래그를 추가해야합니다.  </p>
+<h3 id="example">Example</h3>
+<p>예를 들어 다음 serializer가 있습니다.</p>
+<pre><code class="python">class TrackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = ('order', 'title', 'duration')
+
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = TrackSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>다음과 같이 중첩된 표현으로 serializer 합니다.</p>
+<pre><code class="python">&gt;&gt;&gt; album = Album.objects.create(album_name=&quot;The Grey Album&quot;, artist='Danger Mouse')
+&gt;&gt;&gt; Track.objects.create(album=album, order=1, title='Public Service Announcement', duration=245)
+&lt;Track: Track object&gt;
+&gt;&gt;&gt; Track.objects.create(album=album, order=2, title='What More Can I Say', duration=264)
+&lt;Track: Track object&gt;
+&gt;&gt;&gt; Track.objects.create(album=album, order=3, title='Encore', duration=159)
+&lt;Track: Track object&gt;
+&gt;&gt;&gt; serializer = AlbumSerializer(instance=album)
+&gt;&gt;&gt; serializer.data
+{
+    'album_name': 'The Grey Album',
+    'artist': 'Danger Mouse',
+    'tracks': [
+        {'order': 1, 'title': 'Public Service Announcement', 'duration': 245},
+        {'order': 2, 'title': 'What More Can I Say', 'duration': 264},
+        {'order': 3, 'title': 'Encore', 'duration': 159},
+        ...
+    ],
+}
+</code></pre>
+
+<h3 id="writable-nested-serializers">Writable nested serializers</h3>
+<p>기본적으로 nested serializer는 읽기 전용입니다. 중첩 된 serializer 필드에 대한 쓰기 작업을 지원하려면 <code>creat()</code>와 <code>/</code>또는 <code>update()</code>메서드를 만들어 자식 관계를 저장하는 방법을 명시적으로 지정해야합니다.</p>
+<pre><code class="python">class TrackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = ('order', 'title', 'duration')
+
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = TrackSerializer(many=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+
+    def create(self, validated_data):
+        tracks_data = validated_data.pop('tracks')
+        album = Album.objects.create(**validated_data)
+        for track_data in tracks_data:
+            Track.objects.create(album=album, **track_data)
+        return album
+
+&gt;&gt;&gt; data = {
+    'album_name': 'The Grey Album',
+    'artist': 'Danger Mouse',
+    'tracks': [
+        {'order': 1, 'title': 'Public Service Announcement', 'duration': 245},
+        {'order': 2, 'title': 'What More Can I Say', 'duration': 264},
+        {'order': 3, 'title': 'Encore', 'duration': 159},
+    ],
+}
+&gt;&gt;&gt; serializer = AlbumSerializer(data=data)
+&gt;&gt;&gt; serializer.is_valid()
+True
+&gt;&gt;&gt; serializer.save()
+&lt;Album: Album object&gt;
+</code></pre>
+
+<hr />
+<h2 id="custom-relational-fields">Custom relational fields</h2>
+<p>기존의 관계형 스타일이 필요하지 않은 경우가 드물지만 모델 인스턴스에서 출력 표현을 생성하는 방법을 정확하게 설명하는 완벽한 custom relational field를 구현할 수 있습니다.<br />
+custom relational field를 구현하려면 RelatedField를 오버라이드하고 <code>.to_representation(self, value)</code> 메서드를 구현해야합니다. 이 메서드는 필드의 대상을 <code>value</code>인수로 사용하고 대상을 serializer하는데 사용해야하는 표현을 반환해야합니다. <code>value</code>인수는 일반적으로 모델 인스턴스입니다.<br />
+ read-write relational field를 구현하려면 <code>.to_internal_value(self, data)</code> 메소드도 구현해야합니다.<br />
+contextd를 기반으로 동적 쿼리셋을 제공하려면 클래스에서 <code>.queryset</code>을 지정하거나 필드를 초기화 할 때 <code>.get_queryset(self)</code>를 오버라이드 할 수도 있습니다.</p>
+<h3 id="example_1">Example</h3>
+<p>예를 들어, 순서, 제목, 기간을 사용하여 트랙을 custom 문자열 표현으로 serializer하는 relational field를 정의할 수 있습니다.</p>
+<pre><code class="python">import time
+
+class TrackListingField(serializers.RelatedField):
+    def to_representation(self, value):
+        duration = time.strftime('%M:%S', time.gmtime(value.duration))
+        return 'Track %d: %s (%s)' % (value.order, value.name, duration)
+
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = TrackListingField(many=True)
+
+    class Meta:
+        model = Album
+        fields = ('album_name', 'artist', 'tracks')
+</code></pre>
+
+<p>이 custom 필드는 다음 표현으로 serializer 됩니다.</p>
+<pre><code class="python">{
+    'album_name': 'Sometimes I Wish We Were an Eagle',
+    'artist': 'Bill Callahan',
+    'tracks': [
+        'Track 1: Jim Cain (04:39)',
+        'Track 2: Eid Ma Clack Shaw (04:19)',
+        'Track 3: The Wind and the Dove (04:34)',
+        ...
+    ]
+}
+</code></pre>
+
+<hr />
+<h2 id="custom-hyperlinked-fields">Custom hyperlinked fields</h2>
+<p>어떤 경우에는 하나 이상의 조회 필드가 필요한 URL을 나타내기 위해 하이퍼링크 필드의 동작을 custom 해야 할 수도 있습니다.<br />
+<code>HyperlinkedRelatedField</code>를 오버라이드 하여 이 작업을 수행 할 수 있습니다. 오버라이드 할 수 있는 두 가지 방법이 있습니다.  </p>
+<h4 id="get_urlself-obj-view_name-request-format">get_url(self, obj, view_name, request, format)</h4>
+<p><code>get_url</code> 메서드는 객체 인스턴스를 URL 표현에 매핑하는 데 사용됩니다.<br />
+<code>view_name</code> 및 <code>lookup_field</code> 속성이 URL conf와 정확하게 일치하도록 구성되지 않은 경우 <code>NoReverseMatch</code>를 발생시킬 수 있습니다.  </p>
+<h4 id="get_objectself-queryset-view_name-view_args-view_kwargs">get_object(self, queryset, view_name, view_args, view_kwargs)</h4>
+<p>쓰기 가능한 하이퍼링크 필드를 지원하려면 들어오는 URL을 그들이 나타내는 객체로 다시 매핑하기 위해 <code>get_object</code>를 오버라이드해야합니다. 읽기 전용 하이퍼링크 필드의 경우 이 메서드를 오버라이드 할 필요가 없습니다.<br />
+이 메서드의 반환 값은 일치하는 URL conf 인수에 해당하는 객체이어야 합니다.<br />
+<code>ObjectDoesNotExist</code> 예외가 발생할 수 있습니다.</p>
+<h3 id="example_2">Example</h3>
+<p>다음과 같이 두 개의 키워드 인수를 취하는 고객 객체의 URL이 있다고 가정해보세요.</p>
+<pre><code>/api/&lt;organization_slug&gt;/customers/&lt;customer_pk&gt;/
+</code></pre>
+
+<p>단일의 lookup field 만을 받아들이는 기본 구현에서는 이것을 표현할 수 없습니다.<br />
+이 경우 우리가 원하는 동작을 얻으려면 <code>HyperlinkedRelatedField</code>를 오버라이드해야합니다.</p>
+<pre><code class="python">from rest_framework import serializers
+from rest_framework.reverse import reverse
+
+class CustomerHyperlink(serializers.HyperlinkedRelatedField):
+    # We define these as class attributes, so we don't need to pass them as arguments.
+    view_name = 'customer-detail'
+    queryset = Customer.objects.all()
+
+    def get_url(self, obj, view_name, request, format):
+        url_kwargs = {
+            'organization_slug': obj.organization.slug,
+            'customer_pk': obj.pk
+        }
+        return reverse(view_name, kwargs=url_kwargs, request=request, format=format)
+
+    def get_object(self, view_name, view_args, view_kwargs):
+        lookup_kwargs = {
+           'organization__slug': view_kwargs['organization_slug'],
+           'pk': view_kwargs['customer_pk']
+        }
+        return self.get_queryset().get(**lookup_kwargs)
+</code></pre>
+
+<p>이 스타일을 generic view 와 함께 사용하려는 경우 올바른 조회 동작을 얻으려면 뷰에서 <code>.get_object</code>를 오버라이드 해야합니다.<br />
+일반적으로 가능한 경우 API 표현에 플랫 스타일을 사용하는 것이 좋지만, 중첩된 URL 스타일은 적당히 사용하면 합리적일 수 있습니다.</p>
+<hr />
+<h2 id="further-notes">Further notes</h2>
+<h3 id="the-queryset-argument">The <code>queryset</code> argument</h3>
+<p><code>queryset</code>인수는 쓰기 가능한 관계 필드에만 필요합니다. 이 경우 기본 인스턴스 사용자 입력 모델 인스턴스로 매핑되는 모델 인스턴스 조회를 수행하는데 사용됩니다.<br />
+버전 2.x에서는 serializer 클래스가 <code>ModelSerializer</code> 클래스가 사용되는 경우 <code>queryset</code> 인수를 자동으로 결정할 수 있습니다.<br />
+이 동작은 이제 쓰기 가능한 관계형 필드에 대해 명시적 쿼리셋 인수를 항상 사용하여 대체되었습니다.<br />
+이렇게하면 <code>ModelSerializer</code>이 제공하는 숨겨진 'magic'양이 줄어들고 필드의 동작이 더 명확해지며 <code>ModelSerializer</code> shortcut를 사용하거나 완전하게 명시적인 <code>Serializer</code>클래스를 사용하는 것이 쉽다는 것을 보증합니다.</p>
+<h3 id="customizing-the-html-display">Customizing the HTML display</h3>
+<p>모델의 내장 <code>__str__</code>메서드는 <code>choices</code>속성을 채우는데 사용 된 객체의 문자열 표현을 생성하는데 사용됩니다. 이러한 선택사항은 탐색 가능한 API에서 선택된 HTML 입력을 채우는데 사용됩니다.<br />
+이러한 입력에 대해 custom 된 표현을 제공하려면 <code>RelatedField</code> 서브 클래스의 <code>display_value()</code>를 대체하세요. 이 메서드는 모델 객체를 수신하고 모델 객체를 나타내는데 적합한 문자열을 반환해야합니다. 예:</p>
+<pre><code class="python">class TrackPrimaryKeyRelatedField(serializers.PrimaryKeyRelatedField):
+    def display_value(self, instance):
+        return 'Track: %s' % (instance.title)
+</code></pre>
+
+<h3 id="select-field-cutoffs">Select field cutoffs</h3>
+<p>browsable API에서 렌더링 될 때 관계형 필드는 기본적으로 최대 1000개의 선택 가능한 항목만 표시합니다. 더 많은 항목이 있으면 "More than 1000 items..."와 함께 비활성화 된 옵션이 표시됩니다.<br />
+이 동작은 매우 많은 수의 관계가 표시되어 허용되는 범위 내에서 템플릿을 렌더링 할 수 없도록 하기 위한 것입니다.<br />
+이 동작을 제어하는데 사용할 수 있는 두 개의 키워드인수가 있습니다.  </p>
+<ul>
+<li><code>html_cutoff</code> : 설정된 경우 HTML 선택 드롭 다운에 표시 될 최대 선택 항목 수입니다. 제한을 해제하려면 <code>None</code>으로 설정하십시오. 기본값은 <code>1000</code>입니다.</li>
+<li><code>html_cutoff_text</code> - 설정된 경우 HTML 선택 드롭 다운에서 최대 항목 수가 잘린 경우 텍스트 표시를 보여줍니다. 기본값은 <code>"More than {count} items…"</code>입니다.  </li>
+</ul>
+<p><code>HTML_SELECT_CUTOFF</code> 및 <code>HTML_SELECT_CUTOFF_TEXT</code> 설정을 사용하여 전역으로 제어 할 수도 있습니다.<br />
+컷오프가 적용되는 경우 HTML 양식에 일반 입력 필드를 대신 사용할 수 있습니다. <code>style</code> 키워드 인수를 사용하면됩니다. 예 :</p>
+<pre><code class="python">assigned_to = serializers.SlugRelatedField(
+   queryset=User.objects.all(),
+   slug_field='username',
+   style={'base_template': 'input.html'}
+)
+</code></pre>
+
+<h3 id="reverse-relations">Reverse relations</h3>
+<p>reverse 관계는 <code>ModelSerializer</code>및 <code>HyperlinkedModelSerializer</code>클래스에 자동으로 포함되지 않습니다. reverse 관계를 포함 시키려면 필드 목록에 명시적으로 추가해야합니다. 예:</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('tracks', ...)
+</code></pre>
+
+<p>일반적으로 필드 이름으로 사용할 수 있는 적절한 <code>related_name</code>인수를 관계에 설정했는지 확인해야합니다. 예:</p>
+<pre><code class="python">class Track(models.Model):
+    album = models.ForeignKey(Album, related_name='tracks', on_delete=models.CASCADE)
+    ...
+</code></pre>
+
+<p>reverse 관계에 대한 관련 이름을 설정하지 않은 경우 <code>fields</code>인수에 자동으로 생성 된 관련 이름을 사용해야합니다. 예:</p>
+<pre><code class="python">class AlbumSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('track_set', ...)
+</code></pre>
+
+<p>자세한 내용은 <a href="https://docs.djangoproject.com/en/1.10/topics/db/queries/#following-relationships-backward">reverse relationships</a>에 대한 Django 문서를 참조하세요.</p>
+<h3 id="generic-relationships">Generic relationships</h3>
+<p>일반적인 foreign key를 serializer하려면 관계의 대상을 serializer화하는 방법을 명시적으로 결정하기 위해 custom 필드를 정의해야합니다.<br />
+예를 들어, 다른 임의의 모델과 일반적인 관계가 있는 태그에 대해 다음 모델이 제공됩니다.</p>
+<pre><code class="python">class TaggedItem(models.Model):
+    &quot;&quot;&quot;
+    Tags arbitrary model instances using a generic relation.
+
+    See: https://docs.djangoproject.com/en/stable/ref/contrib/contenttypes/
+    &quot;&quot;&quot;
+    tag_name = models.SlugField()
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    tagged_object = GenericForeignKey('content_type', 'object_id')
+
+    def __unicode__(self):
+        return self.tag_name
+</code></pre>
+
+<p>그리고 다음 두 모델의 관련 태그를 가질 수 있습니다.</p>
+<pre><code class="python">class Bookmark(models.Model):
+    &quot;&quot;&quot;
+    A bookmark consists of a URL, and 0 or more descriptive tags.
+    &quot;&quot;&quot;
+    url = models.URLField()
+    tags = GenericRelation(TaggedItem)
+
+
+class Note(models.Model):
+    &quot;&quot;&quot;
+    A note consists of some text, and 0 or more descriptive tags.
+    &quot;&quot;&quot;
+    text = models.CharField(max_length=1000)
+    tags = GenericRelation(TaggedItem)
+</code></pre>
+
+<p>태그가 지정된 인스턴스를 serializer하는데 사용할 수 있는 custom 필드를 정의하여 각 인스턴스의 유형을 사용하여 serializer 해야하는 방식을 결정할 수 있습니다.</p>
+<pre><code class="python">class TaggedObjectRelatedField(serializers.RelatedField):
+    &quot;&quot;&quot;
+    A custom field to use for the `tagged_object` generic relationship.
+    &quot;&quot;&quot;
+
+    def to_representation(self, value):
+        &quot;&quot;&quot;
+        Serialize tagged objects to a simple textual representation.
+        &quot;&quot;&quot;
+        if isinstance(value, Bookmark):
+            return 'Bookmark: ' + value.url
+        elif isinstance(value, Note):
+            return 'Note: ' + value.text
+        raise Exception('Unexpected type of tagged object')
+</code></pre>
+
+<p>관계의 타겟이 중첩 된 표현을 필요로 하는 경우 <code>.to_representation()</code>메서드 내에서 필요한 serializer를 사용할 수 있습니다.</p>
+<pre><code class="python">  def to_representation(self, value):
+        &quot;&quot;&quot;
+        Serialize bookmark instances using a bookmark serializer,
+        and note instances using a note serializer.
+        &quot;&quot;&quot;
+        if isinstance(value, Bookmark):
+            serializer = BookmarkSerializer(value)
+        elif isinstance(value, Note):
+            serializer = NoteSerializer(value)
+        else:
+            raise Exception('Unexpected type of tagged object')
+
+        return serializer.data
+</code></pre>
+
+<p><code>GenericRelation</code>필드를 사용하여 표현된 reverse generic key는 관계의 대상 유형이 항상 알려져 있으므로 일반 관계형 필드 유형을 사용하여 serializer화 할 수 있습니다.<br />
+더 자세한 정보는 <a href="https://docs.djangoproject.com/en/1.10/ref/contrib/contenttypes/#id1">the Django documentation on generic relations</a>를 참조하세요.</p>
+<h3 id="manytomanyfields-with-a-through-model">ManyToManyFields with a Through Model</h3>
+<p>기본적으로 지정된 <code>through</code> 모델을 사용하여 <code>ManyToManyField</code>를 대상으로하는 관계형 필드는 읽기전용으로 설정됩니다.<br />
+through 모델을 사용하여 <code>manyToManyField</code>를 가리키는 관계 필드를 명시적으로 지정하면 <code>read_only</code>를 <code>True</code>로 설정하세요.</p>
+<hr />
+<h2 id="third-party-packages">Third Party Packages</h2>
+<p>다음의 타사 패키지도 제공됩니다.</p>
+<h3 id="drf-nested-routers">DRF Nested Routers</h3>
+<p><a href="https://github.com/alanjds/drf-nested-routers">drf-nested-routers</a> 패키지는 중첩 된 리소스로 작업하기 위한 라우터 및 관계 필드를 제공합니다.</p>
+<h3 id="rest-framework-generic-relations">Rest Framework Generic Relations</h3>
+<p><a href="https://github.com/Ian-Foote/rest-framework-generic-relations">rest-framework-generic-relations</a> 라이브러리는 일반적인 foreign key에 대한 read/write serializer화를 제공합니다.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Validators/" class="btn btn-neutral float-right" title="Validators">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Serializer_fields/" class="btn btn-neutral" title="Serializer fields"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Serializer_fields/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Validators/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Metadata - Django Rest Framework Docs Korean version</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Metadata";
+    var mkdocs_page_input_path = "Metadata.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Django Rest Framework Docs Korean version</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Requests/">Requests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Responses/">Responses</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Views/">Views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Generic_views/">Generic views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ViewSets/">Viewsets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Routers/">Routers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Parsers/">Parsers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Renderers/">Renderers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializers/">Serializers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_fields/">Serializer fields</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_relations/">Serializer relations</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Validators/">Validators</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Authentication/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Permissions/">Permissions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Throttling/">Throttling</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Filtering/">Filtering</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Pagination/">Pagination</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Versioning/">Versioning</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Content_negotiation/">Content negotiation</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Metadata</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#django-rest-framework-metadata">Django REST Framework - Metadata</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#metadata">Metadata</a></li>
+        
+            <li><a class="toctree-l3" href="#custom-metadata-classes">Custom metadata classes</a></li>
+        
+            <li><a class="toctree-l3" href="#third-party-packages">Third party packages</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Schemas/">Schemas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Format_suffixes/">Format suffixes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Returning_URLs/">Returning URLs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Exceptions/">Exceptions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Status_Codes/">Status codes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Settings/">Settings</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Django Rest Framework Docs Korean version</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Metadata</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django-rest-framework-metadata">Django REST Framework - Metadata</h1>
+<hr />
+<p><em>"[The OPTIONS] method allows a client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval."</em>  </p>
+<p><em>"[OPTIONS] 메소드는 클라이언트가 자원 동작을 암시하거나 자원 검색을 시작하지 않고 자원 또는 서버의 기능과 관련된 옵션 및 <code>/</code> 또는 요구 사항을 결정할 수 있게 합니다."</em>  </p>
+<p><em>— RFC7231, Section 4.3.7.</em></p>
+<hr />
+<h2 id="metadata">Metadata</h2>
+<p>REST 프레임워크는 API가 <code>OPTIONS</code> 요청에 어떻게 응답해야 하는지를 결정하기 위한 구성 가능한 메커니즘을 포함합니다. API 스키마 또는 기타 리소스 정보를 반환 할 수 있습니다.<br />
+현재 HTTP OPTIONS 요청에 대해 어떤 스타일의 response를 반환해야하는지에 대해 널리 채택 된 규칙이 없으므로 유용한 정보를 반환하는 특별 스타일을 제공합니다.<br />
+다음은 기본적으로 반환되는 정보를 보여주는 예제 response입니다.</p>
+<pre><code class="python">HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+
+{
+    &quot;name&quot;: &quot;To Do List&quot;,
+    &quot;description&quot;: &quot;List existing 'To Do' items, or create a new item.&quot;,
+    &quot;renders&quot;: [
+        &quot;application/json&quot;,
+        &quot;text/html&quot;
+    ],
+    &quot;parses&quot;: [
+        &quot;application/json&quot;,
+        &quot;application/x-www-form-urlencoded&quot;,
+        &quot;multipart/form-data&quot;
+    ],
+    &quot;actions&quot;: {
+        &quot;POST&quot;: {
+            &quot;note&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;required&quot;: false,
+                &quot;read_only&quot;: false,
+                &quot;label&quot;: &quot;title&quot;,
+                &quot;max_length&quot;: 100
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="setting-the-metadata-scheme">Setting the metadata scheme</h3>
+<p><code>DEFAULT_METADATA_CLASS</code>설정 키를 사용하여 메타 데이터 클래스를 전역으로 설정할 수 있습니다.</p>
+<pre><code class="python">REST_FRAMEWORK = {
+    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata'
+}
+</code></pre>
+
+<p>또는 view에 대해 개별적으로 메타 데이터 클래스를 설정할 수 있습니다.</p>
+<pre><code class="python">class APIRoot(APIView):
+    metadata_class = APIRootMetadata
+
+    def get(self, request, format=None):
+        return Response({
+            ...
+        })
+</code></pre>
+
+<p>REST 프레임워크 패키지는 <code>SimpleMetadata</code>라는 단일 메타 데이터 클래스 구현만 포함됩니다. 다른 스타일을 사용하려면 custom 메타 데이터 클래스를 구현해야합니다.</p>
+<h3 id="creating-schema-endpoints">Creating schema endpoints</h3>
+<p>일반 <code>GET</code> 요청으로 액서스되는 schema endpoint을 만들기 위한 특정 요구사항이 있는 경우 그렇게 하기 위해 메타 데이터 API를 다시 사용할 수 있습니다.<br />
+예를 들어, 다음과 같은 추가 라우트를 vViewSet에 사용하여 linkable schema endpoint에 제공할 수  있습니다.</p>
+<pre><code class="python">@list_route(methods=['GET'])
+def schema(self, request):
+    meta = self.metadata_class()
+    data = meta.determine_metadata(request, self)
+    return Response(data)
+</code></pre>
+
+<p><code>OPTIONS</code> 응답을 <a href="https://www.mnot.net/blog/2012/10/29/NO_OPTIONS">캐싱할 수 없다는 것</a>을 포함하여 이 접근 방식을 선택할 수 있는 몇가지 이유가 있습니다.</p>
+<hr />
+<h2 id="custom-metadata-classes">Custom metadata classes</h2>
+<p>custom metadata 클래스를 제공하려면 <code>BaseMetadata</code>를 대체하고 <code>decide_metadata(self, request, view)</code> 메서드를 구현해야합니다.<br />
+유용한 정보로는 schema 정보 리턴, <a href="http://json-schema.org/">JSON schema</a>와 같은 형식 사용 또는 관리자에세 디버그 정보 리턴 등이 있습니다.</p>
+<h3 id="example">Example</h3>
+<p>다음 클래스는 <code>OPTIONS</code> 요청에 반환되는 정보를 제한하는데 사용될 수 있습니다.</p>
+<pre><code class="python">class MinimalMetadata(BaseMetadata):
+    &quot;&quot;&quot;
+    Don't include field and other information for `OPTIONS` requests.
+    Just return the name and description.
+    &quot;&quot;&quot;
+    def determine_metadata(self, request, view):
+        return {
+            'name': view.get_view_name(),
+            'description': view.get_view_description()
+        }
+</code></pre>
+
+<p>그런 다음 이 custom 클래스를 사용하도록 설정을 구성하세요.</p>
+<pre><code class="python">REST_FRAMEWORK = {
+    'DEFAULT_METADATA_CLASS': 'myproject.apps.core.MinimalMetadata'
+}
+</code></pre>
+
+<h2 id="third-party-packages">Third party packages</h2>
+<p>다음의 타사 패키지는 추가 메나 데이터 구현을 제공합니다.</p>
+<h3 id="drf-schema-adapter">DRF-schema-adapter</h3>
+<p><a href="">drf-schema-adapter</a>는 프론트엔드 프레임워크 및 라이브러리에 스키마 정보를 보다 쉽게 제공할 수 있게 해주는 도구 set입니다.  metadata mixin 뿐만 아니라 다양한 라이브러리에 의해 읽을 수 있는 스키마 정보뿐만 아니라 <a href="http://json-schema.org/">json-schema</a>를 생성하는데 적합한 2개의 metadara 클래스와 여러 어댑터를 제공합니다.<br />
+특정 프론트엔드에서 작동하도록 어댑터를 작성할 수도 있습니다. 그렇게 하고 싶다면 스키마 정보를 json 파일로 내보낼 수 있는 내보내기 기능을 제공합니다.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Schemas/" class="btn btn-neutral float-right" title="Schemas">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Content_negotiation/" class="btn btn-neutral" title="Content negotiation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Content_negotiation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Schemas/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

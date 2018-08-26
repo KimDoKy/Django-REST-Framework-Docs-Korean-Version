@@ -1,0 +1,31 @@
+site_name: Django Rest Framework Docs Korean version
+pages:
+    - Home: index.md
+    - Requests: Requests.md
+    - Responses: Responses.md
+    - Views: Views.md
+    - Generic views: Generic_views.md
+    - Viewsets: ViewSets.md
+    - Routers: Routers.md
+    - Parsers: Parsers.md
+    - Renderers: Renderers.md
+    - Serializers: Serializers.md
+    - Serializer fields: Serializer_fields.md
+    - Serializer relations: Serializer_relations.md
+    - Validators: Validators.md
+    - Authentication: Authentication.md
+    - Permissions: Permissions.md
+    - Throttling: Throttling.md
+    - Filtering: Filtering.md
+    - Pagination: Pagination.md
+    - Versioning: Versioning.md
+    - Content negotiation: Content_negotiation.md
+    - Metadata: Metadata.md
+    - Schemas: Schemas.md
+    - Format suffixes: Format_suffixes.md
+    - Returning URLs: Returning_URLs.md
+    - Exceptions: Exceptions.md
+    - Status codes: Status_Codes.md
+    - Testing: Testing.md
+    - Settings: Settings.md
+theme: readthedocs

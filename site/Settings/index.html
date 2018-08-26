@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Settings - Django Rest Framework Docs Korean version</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Settings";
+    var mkdocs_page_input_path = "Settings.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Django Rest Framework Docs Korean version</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Requests/">Requests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Responses/">Responses</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Views/">Views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Generic_views/">Generic views</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ViewSets/">Viewsets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Routers/">Routers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Parsers/">Parsers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Renderers/">Renderers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializers/">Serializers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_fields/">Serializer fields</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Serializer_relations/">Serializer relations</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Validators/">Validators</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Authentication/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Permissions/">Permissions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Throttling/">Throttling</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Filtering/">Filtering</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Pagination/">Pagination</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Versioning/">Versioning</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Content_negotiation/">Content negotiation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Metadata/">Metadata</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Schemas/">Schemas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Format_suffixes/">Format suffixes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Returning_URLs/">Returning URLs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Exceptions/">Exceptions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Status_Codes/">Status codes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Settings</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#django-rest-framework-settings">Django REST Framework - Settings</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#settings">Settings</a></li>
+        
+            <li><a class="toctree-l3" href="#api-reference">API Reference</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Django Rest Framework Docs Korean version</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Settings</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django-rest-framework-settings">Django REST Framework - Settings</h1>
+<hr />
+<p><em>"Namespaces are one honking great idea - let's do more of those!"</em>  </p>
+<p><em>"네임 스페이스는 훌륭한 아이디어를 제공합니다. let's do more of those!"</em>  </p>
+<p><em>— The Zen of Python</em></p>
+<hr />
+<h2 id="settings">Settings</h2>
+<p>REST 프레임워크의 모든 설정은 <code>REST_FRAMEWORK</code>라는 단일 Django 설정에 네임 스페이스를 설정합니다.<br />
+예를 들어 프로젝트의 <code>settings.py</code>파일에는 다음과 같은 내용이 포함될 수 있습니다.</p>
+<pre><code class="python">REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    )
+}
+</code></pre>
+
+<h3 id="accessing-settings">Accessing settings</h3>
+<p>프로젝트에서 REST 프레임워크의 API 설정값에 액서스해야하는 경우 <code>api_settings</code>객체를 사용해야합니다. 예를 들면.</p>
+<pre><code class="python">from rest_framework.settings import api_settings
+
+print api_settings.DEFAULT_AUTHENTICATION_CLASSES
+</code></pre>
+
+<p><code>api_settings</code>객체는 사용자가 정의한 설정을 확인하고 그렇지 않으면 기본값을 fall back합니다. 클래스를 참조하기 위해 string import path를 사용하여 모든 설정은 문자열 리터럴 대신 참조 된 클래스를 자동으로 가져오고 반환합니다.</p>
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="api-policy-settings">API policy settings</h3>
+<p>다음 설정은 기본 API 정책을 제어하며 모든 <code>APIView</code> CBV 또는 <code>@api_view</code> FBV에 적용됩니다.</p>
+<h4 id="default_renderer_classes"><code>DEFAULT_RENDERER_CLASSES</code></h4>
+<p><code>Response</code> 객체를 반환할 때 사용할 수 있는 renderer의 기본 set을 결정하는 rederer 클래스의 list 또는 tuple입니다.  </p>
+<p>Default:</p>
+<pre><code class="python">(
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+)
+</code></pre>
+
+<h4 id="default_parser_classes"><code>DEFAULT_PARSER_CLASSES</code></h4>
+<p><code>request.data</code>속성에 액서스 할 때 사용되는 parser의 기본 set을 결정하는 parser 클래스의 list 또는 tuple입니다.</p>
+<p>Default:</p>
+<pre><code class="python">(
+    'rest_framework.parsers.JSONParser',
+    'rest_framework.parsers.FormParser',
+    'rest_framework.parsers.MultiPartParser'
+)
+</code></pre>
+
+<h4 id="default_authentication_classes"><code>DEFAULT_AUTHENTICATION_CLASSES</code></h4>
+<p><code>request.user</code> 또는 <code>request.auth</code>등록 정보에 액서스할 때 사용되는 인증자의 기본 set을 판별하는 authentication 클래스의 list 또는 tuple입니다.  </p>
+<p>Default:</p>
+<pre><code class="python">(
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication'
+)
+</code></pre>
+
+<h4 id="default_permission_classes"><code>DEFAULT_PERMISSION_CLASSES</code></h4>
+<p>view의 시작에 체크 된 권한의 기본 set을 결정하는 permission 클래스의 list 또는 tuple입니다. permission은 list의 모든 클래스에서 부여해야합니 다.  </p>
+<p>Default:</p>
+<pre><code class="python">(
+    'rest_framework.permissions.AllowAny',
+)
+</code></pre>
+
+<h4 id="default_throttle_classes"><code>DEFAULT_THROTTLE_CLASSES</code></h4>
+<p>view의 시작에서 점검되는 기본 throttle set을 결정하는 throttle 클래스의 list 또는 tuple입니다.  </p>
+<p>Default: <code>()</code></p>
+<h4 id="default_content_negotiation_class"><code>DEFAULT_CONTENT_NEGOTIATION_CLASS</code></h4>
+<p>들어오는 request에 따라 rederer가 response에 대해 선택되는 방법을 결정하는 content negotiation 클래스 입니다.  </p>
+<p>Default: <code>'rest_framework.negotiation.DefaultContentNegotiation'</code></p>
+<hr />
+<h3 id="generic-view-settings">Generic view settings</h3>
+<p>다음 설정은 generic CBV의 동작을 제어합니다.  </p>
+<h4 id="default_pagination_serializer_class"><code>DEFAULT_PAGINATION_SERIALIZER_CLASS</code></h4>
+<hr />
+<p><strong>이 설정은 제거되었습니다.</strong>  </p>
+<p>pagination API는 출력 형식을 결정하기 위해 serializer를 사용하지 않으므로 대신 출력 형식 제어 방법을 지정하기 위해 pagination 클래스의 `'get_paginated_response`` 메서드를 대체해야합니다.</p>
+<hr />
+<h4 id="default_filter_backends"><code>DEFAULT_FILTER_BACKENDS</code></h4>
+<p>generic 필터링에 사용해야 하는 filter backend 클래스 list입니다. <code>None</code>으로 설정하면 generic 필터링이 비활성화됩니다.</p>
+<h4 id="paginate_by"><code>PAGINATE_BY</code></h4>
+<hr />
+<p><strong>이 설정은 제거 되었습니다.</strong>  </p>
+<p>pagination 스타일 설정에 대한 자세한 지침은 <a href="http://www.django-rest-framework.org/api-guide/pagination/#modifying-the-pagination-style">setting the pagination style</a>를 참조하세요.</p>
+<hr />
+<h4 id="page_size"><code>PAGE_SIZE</code></h4>
+<p>pagination에 사용할 기본 페이지 크기입니다. <code>None</code>으로 설정하면 기본적으로 pagination이 비활성화됩니다.  </p>
+<p>Default: <code>None</code>  </p>
+<h4 id="paginate_by_param"><code>PAGINATE_BY_PARAM</code></h4>
+<hr />
+<p><strong>이 설정은 제거 되었습니다.</strong>  </p>
+<p>pagination 스타일 설정에 대한 자세한 지침은 <a href="http://www.django-rest-framework.org/api-guide/pagination/#modifying-the-pagination-style">setting the pagination style</a>를 참조하세요.</p>
+<hr />
+<h4 id="max_paginate_by"><code>MAX_PAGINATE_BY</code></h4>
+<hr />
+<p><strong>이 설정은 지원 중단 예정입니다.</strong>  </p>
+<p>pagination 스타일 설정에 대한 자세한 지침은 <a href="http://www.django-rest-framework.org/api-guide/pagination/#modifying-the-pagination-style">setting the pagination style</a>를 참조하세요.</p>
+<hr />
+<h4 id="search_param">SEARCH_PARAM</h4>
+<p><code>SearchFilter</code>가 사용하는 검색어를 지정하는데 사용 할 수 있는 검색어 parameter의 이름입니다.  </p>
+<p>Default: <code>search</code>  </p>
+<h4 id="ordering_param">ORDERING_PARAM</h4>
+<p><code>OrderingFilter</code>에 의해 반환 된 결과의 순서를 지정하는데 사용할 수 있는 쿼리 parameter의 이름입니다.  </p>
+<p>Default: <code>ordering</code></p>
+<hr />
+<h3 id="versioning-settings">Versioning settings</h3>
+<h4 id="default_version">DEFAULT_VERSION</h4>
+<p>버전 정보가 없는 경우 <code>request.version</code>에 사용해야 하는 값입니다.  </p>
+<p>Default: <code>None</code></p>
+<h4 id="allowed_versions">ALLOWED_VERSIONS</h4>
+<p>이 값을 설정하면 버전 체계에 의해 반환 될 수 있는 버전 set이 제한되며, 제공된 버전이 이 set에 포함되어 있지 않으면 오류가 발생합니다.  </p>
+<p>Default: <code>none</code>  </p>
+<h4 id="version_param">VERSION_PARAM</h4>
+<p>미디어 타입 또는 URL 쿼리 parameter와 같이 모든 버젼 지정 parameter에 사용해야하는 문자열입니다.  </p>
+<p>Default: <code>version</code></p>
+<hr />
+<h3 id="authentication-settings">Authentication settings</h3>
+<p>다음 설정은 인증되지 않은 요청의 동작을 제어합니다.  </p>
+<h4 id="unauthenticated_user">UNAUTHENTICATED_USER</h4>
+<p>인증되지 않은 요청에 대해 <code>request.user</code>를 초기화하는데 사용해야하는 클래스입니다.  </p>
+<p>Default: <code>django.contrib.auth.models.AnonymousUser</code>  </p>
+<h4 id="unauthenticated_token">UNAUTHENTICATED_TOKEN</h4>
+<p>인증되지 않은 요청에 대해 <code>request.auth</code>를 초기화하는데 사용해야 하는 클래스입니다.  </p>
+<p>default: <code>None</code></p>
+<p>--</p>
+<h3 id="test-settings">Test settings</h3>
+<p>다음 설정은 APIRequestFactory 및 APIClient의 동작을 제어합니다.  </p>
+<h4 id="test_request_default_format"><code>TEST_REQUEST_DEFAULT_FORMAT</code></h4>
+<p>테스트 요청을 할때 사용해야하는 기본 형식입니다.<br />
+이 값은 <code>TEST_REQUEST_RENDERER_CLASSES</code>설정의 renderer 클래스 중 하나의 형식과 일치해야합니다.  </p>
+<p>Default: <code>'multipart'</code></p>
+<h4 id="test_request_renderer_classes"><code>TEST_REQUEST_RENDERER_CLASSES</code></h4>
+<p>테스트 요청을 작성할 때 지원되는 renderer 클래스입니다.<br />
+<code>client.post('/users', {'username': 'jamie'}, format='json')</code> 이러한 renderer 클래스의 형식은 테스트 요청을 구성 할 때 사용할 수 있습니다.  </p>
+<p>Default:</p>
+<pre><code class="python">(
+    'rest_framework.renderers.MultiPartRenderer',
+    'rest_framework.renderers.JSONRenderer'
+)
+</code></pre>
+
+<hr />
+<h3 id="schema-generation-controls">Schema generation controls</h3>
+<h4 id="schema_coerce_path_pk"><code>SCHEMA_COERCE_PATH_PK</code></h4>
+<p>이것을 설정하면 schema path parameter를 생성할 때 URL conf의 <code>'pk'</code>식별자를 실제 필드 이름으로 매핑합니다. 일반적으로 <code>'id'</code>가 됩니다. 이것은 "indentifer"가 좀 더 일반적인 개념인 반면 "primary key"는 세부 사항이므로 보다 적합한 표현을 제공합니다.</p>
+<p>Default: <code>True</code>  </p>
+<h4 id="schema_coerce_method_names"><code>SCHEMA_COERCE_METHOD_NAMES</code></h4>
+<p>이것이 설정되면 내부 viewset 메소드 이름을 schema generation에 사용 딘 외부 액션 이름에 매핑하는데 사용됩니다. 이것은 코드 베이스에서 내부적으로 사용되는 것보다 외부 표현에 더 적합한 이름을 생성할 수 있게 해줍니다.  </p>
+<p>Default: <code>{'retrieve': 'read', 'destroy': 'delete'}</code></p>
+<hr />
+<h3 id="content-type-controls">Content type controls</h3>
+<h4 id="url_format_override"><code>URL_FORMAT_OVERRIDE</code></h4>
+<p>기본 content negotiation <code>Accept</code>을 오버라이드하는데 사용할 수 있는 URL parameter의 이름 요청 URL에서 <code>format=...</code> 쿼리 parameter를 사용하여 헤더의 동작을 허용합니다.  </p>
+<p>예: <code>http://example.com/organizations/?format=csv</code>  </p>
+<p>이 설정 값이 <code>None</code>이면 URL 형식 오버라이드가 비활성화 됩니다.  </p>
+<p>Default: <code>'format'</code>  </p>
+<h4 id="format_suffix_kwarg"><code>FORMAT_SUFFIX_KWARG</code></h4>
+<p>format suffix를 제공하는데 사용할 수 있는 URL conf의 parameter 이름입니다. 이 설정은 format_suffix_pattern`을 사용하여 접미사로 된 URL패턴을 포함할 때 적용됩니다.  </p>
+<p>예: <code>http://example.com/organizations.csv/</code>  </p>
+<p>Default: <code>'format'</code></p>
+<hr />
+<h3 id="date-and-time-formatting">Date and time formatting</h3>
+<p>다음 설정은 날짜 및 시간 표현을 파싱하고 렌더링하는 방법을 제어하는데 사용됩니다.  </p>
+<h4 id="datetime_format"><code>DATETIME_FORMAT</code></h4>
+<p><code>DateTimeField</code> Serializer 필드의 출력을 렌더링하기 위해 기본적으로 사용해야 하는 형식 문자열입니다. <code>None</code>이면 <code>DateTimeField</code> serializer 필드는 Python <code>datetime</code>객체를 반환하고, datetime 인코딩은 렌더러에 의해 결정됩니다.  </p>
+<p><code>None</code>, <code>'iso-8601'</code>또는 Python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a> 형식 문자열 주 하나 일 수 있습니다.  </p>
+<p>Default: <code>'iso-8601'</code></p>
+<h4 id="datetime_input_formats"><code>DATETIME_INPUT_FORMATS</code></h4>
+<p><code>DateTimeField</code> serializer 필드에 대한 입력을 파싱하기위해 기본적으로 사용해야하는 형식문자열 list입니다.<br />
+문자열 <code>'iso-8601'</code>또는 python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a>형식 문자열을 포함하는 list일 수 있습니다.  </p>
+<p>Default: <code>['iso-8601']</code></p>
+<h4 id="date_format"><code>DATE_FORMAT</code></h4>
+<p><code>DateField</code> serializer필드의 출력을 렌더링하기 위해 기본적으로 사용해야하는 형식 문자열입니다. <code>None</code>이면 <code>DateField</code> serializer 필드는 Python <code>date</code> 객체를 반환하고 날짜 인코딩은 렌더러에 의해 결정됩니다.  </p>
+<p><code>None</code>, <code>'iso-8601'</code>또는 python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a>형식 문자열을 포함하는 list일 수 있습니다.  </p>
+<p>Default: <code>['iso-8601']</code></p>
+<h4 id="date_input_formats"><code>DATE_INPUT_FORMATS</code></h4>
+<p><code>DateField</code> serializer 필드에 대한 입력을 파싱하기 위해 기본적으로 사용해야하는 형식 문자열 list입니다.  </p>
+<p>문자열 <code>'iso-8601'</code>또는 python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a>형식 문자열을 포함하는 list일 수 있습니다.  </p>
+<p>Default: <code>['iso-8601']</code></p>
+<h4 id="time_format"><code>TIME_FORMAT</code></h4>
+<p><code>TimeField</code> serializer 필드의 출력을 렌더링 할 때 기본저긍로 사용해야하는 형식 문자열입니다. <code>None</code> 이면 <code>TimeField</code> serializer 필드는 Python <code>time</code> 객체를 반환하고 time 인코딩은 렌더러에 의해 결정됩니다.  </p>
+<p><code>None</code>, <code>'iso-8601'</code>또는 python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a>형식 문자열을 포함하는 list일 수 있습니다.   </p>
+<p>Default: <code>['iso-8601']</code></p>
+<h4 id="time_input_formats"><code>TIME_INPUT_FORMATS</code></h4>
+<p><code>TimeField</code> serializer 필드에 대한 입력을 파싱하기 위해 기본적으로 사용해야 하는 형식 문자열 list입니다.  </p>
+<p>문자열 <code>'iso-8601'</code>또는 python <a href="https://docs.python.org/3/library/time.html#time.strftime">strftime format</a>형식 문자열을 포함하는 list일 수 있습니다.  </p>
+<p>Default: <code>['iso-8601']</code></p>
+<hr />
+<h3 id="encodings">Encodings</h3>
+<h4 id="unicode_json"><code>UNICODE_JSON</code></h4>
+<p><code>True</code>로 설정하면, JSON response가 response에 유니코드 문자를 허용합니다.</p>
+<pre><code>{&quot;unicode black star&quot;:&quot;★&quot;}
+</code></pre>
+
+<p><code>False</code>로 설정하면 JSON response가 다음과 같이 non-ascii 문자를 이스케이프합니다.</p>
+<pre><code>{&quot;unicode black star&quot;:&quot;\u2605&quot;}
+</code></pre>
+
+<p>두 스타일 모두 <a href="">RFC 4627</a>을 준수하며 구문적으로 유효한 JSON입니다. 유니코드 스타일은 API 응답을 검사할 때보다 사용자에게 친숙한 것으로 선호됩니다.  </p>
+<p>Default: <code>True</code></p>
+<h4 id="compact_json"><code>COMPACT_JSON</code></h4>
+<p><code>True</code>로 설정하면 JSON response sms <code>':'</code>과 <code>','</code>문자 다음에 공백없이 간결한 표현을 반환합니다.</p>
+<pre><code>{&quot;is_admin&quot;:false,&quot;email&quot;:&quot;jane@example&quot;}
+</code></pre>
+
+<p><code>False</code>로 설정하면 JSON 응답이 다음과 같이 약간 더 자세한 표현을 반환합니다.</p>
+<pre><code>{&quot;is_admin&quot;: false, &quot;email&quot;: &quot;jane@example&quot;}
+</code></pre>
+
+<p>기본 스타일은 <a href="https://github.com/interagent/http-api-design#keep-json-minified-in-all-responses">Heroku's API design guidelines</a>에 따라 축소 된 응답을 반환하는 것입니다.  </p>
+<p>Default: <code>True</code></p>
+<h4 id="coerce_decimal_to_string"><code>COERCE_DECIMAL_TO_STRING</code></h4>
+<p>기존 decimal(10진) type을 지원하지 않는 API 표현에서 decimal 오브젝트를 리턴할 때, 일반적으로 값을 문자열로 리턴하는 것이 가장 좋습니다. 따라서 바이너리 부동 소수점 구현에서 발생하는 정밀도의 손실을 피할 수 있습니다.<br />
+<code>True</code>로 설정하면 serializer <code>DecimalField</code> 클래스가 Decimal 객체 대신 문자열을 반환합니다. <code>False</code>로 설정하면, serializer는 Decimal 객체를 반환합니다. 이 객체는 기본 JSON 인코더가 float으로 반환합니다.</p>
+<p>Default: <code>True</code></p>
+<hr />
+<h3 id="view-names-and-descriptions">View names and descriptions</h3>
+<p><strong>다음 설정은 <code>OPTIONS</code> 요청에 대한 응답 및 Browsable API에서 사용되는 것과 같이 뷰 이름 및 설명을 생성하는데 사용됩니다.</strong></p>
+<h4 id="view_name_function"><code>VIEW_NAME_FUNCTION</code></h4>
+<p>뷰 이름을 생성할 때 사용해야하는 함수를 나타내는 문자열입니다.<br />
+이것은 다음 시그니처가 있는 함수이어야 합니다.</p>
+<pre><code>view_name(cls, suffix=None)
+</code></pre>
+
+<ul>
+<li><code>cls</code> : 뷰 클래스. 일반적으로 이름 함수는 <code>cls.__name__</code>에 액서스하여 설명적인 이름을 생성 할 때 클래스 이름을 검사합니다.</li>
+<li><code>suffix</code> : viewset에서 개별 뷰를 구별 할 때 사용되는 선택적 suffix</li>
+</ul>
+<p>Default: <code>'rest_framework.views.get_view_name'</code></p>
+<h4 id="view_description_function"><code>VIEW_DESCRIPTION_FUNCTION</code></h4>
+<p>뷰 설명을 생성 할 때 사용해야하는 함수를 나타내는 문자열입니다.<br />
+기본 설정 값 이외의 태그 스타일을 지원하도록 이 설정을 변경할 수 있습니다. 예를 들어, 브라우저에서 볼 수 있는 API로 출력되는 뷰 문서 문자열의 <code>rst</code> 마크업을 지원하는데 사용할 수 있습니다.<br />
+이것은 다음 시그니처가 있는 함수이어야 합니다.</p>
+<pre><code>view_description(cls, html=False)
+</code></pre>
+
+<ul>
+<li>
+<p><code>cls</code> : 뷰 클래스. 일반적으로 설명 함수는 <code>cls.__doc__</code>에 액서스하여 설명을 생성 할 때 클래스의 문서화 문자열을 검사합니다.</p>
+</li>
+<li>
+<p><code>html</code> : HTML 출력이 필요한지 나타내는 boolean입니다. 탐색 가능한 API에서 사용되면 <code>True</code>이고, <code>OPTIONS</code>응답을 생성하는데 사용되면 <code>False</code>입니다.</p>
+</li>
+</ul>
+<p>Default: <code>'rest_framework.views.get_view_description'</code></p>
+<h3 id="html-select-field-cutoffs">HTML Select Field cutoffs</h3>
+<p>Browsable API에서 <a href="http://www.django-rest-framework.org/api-guide/relations/#select-field-cutoffs">관계형 필드를 렌더링하기 위한 선택 필드 컷오프</a>에 대한 전역 설정입니다.</p>
+<h4 id="html_select_cutoff"><code>HTML_SELECT_CUTOFF</code></h4>
+<p><code>html_cutoff</code>값의 전역 설정입니다. 정수이어야 합니다.  </p>
+<p>Default: 1000</p>
+<h4 id="html_select_cutoff_text"><code>HTML_SELECT_CUTOFF_TEXT</code></h4>
+<p><code>html_cutoff_text</code>의 전역 설정을 나타내는 문자열입니다.  </p>
+<p>Default: <code>"More than {count} items..."</code></p>
+<hr />
+<h3 id="miscellaneous-settings">Miscellaneous settings</h3>
+<h4 id="exception_handler"><code>EXCEPTION_HANDLER</code></h4>
+<p>지정된 예외에 대한 응답을 반환할 때 사용해야하는 함수를 나타내는 문자열입니다. 이 함수가 <code>None</code>을 반환하면 500 error가 발생합니다.<br />
+이 설정은 기본 <code>{"detail": "Failure..."}</code>응답 이외의 오류 응답을 지원하도록 변경할 수 있습니다. 예를 들어 <code>{"errors": [{"message": "Failure...", "code": ""} ...]}</code>와 같은 API 응답을 제공하는데 사용할 수 있습니다.  </p>
+<p>이것은 다음 시그니처가 있는 함수이어야 합니다.</p>
+<pre><code>exception_handler(exc, context)
+</code></pre>
+
+<ul>
+<li><code>exc</code> : 예외</li>
+</ul>
+<p>Default: <code>'rest_framework.views.exception_handler'</code>  </p>
+<h4 id="non_field_errors_key"><code>NON_FIELD_ERRORS_KEY</code></h4>
+<p>특정 필드를 참조하지 않고 일반적인 오류인 serializer 오류에 사용해야하는 키를 나타내는 문자열입니다.  </p>
+<p>Default: <code>'non_field_errors'</code>  </p>
+<h4 id="url_field_name"><code>URL_FIELD_NAME</code></h4>
+<p><code>HyperlinkedModelSerializer</code>에 의해 생성 된 URL 필드에 사용해야하는 키를 나타내는 문자열입니다.  </p>
+<p>Default: <code>'url'</code></p>
+<h4 id="num_proxies"><code>NUM_PROXIES</code></h4>
+<p>API가 실행되는 응용 프로그램 프록시 수를 지정하는데 사용할 수 있는 0 이상의 정수입니다. 이렇게 하면 throttling을 통해 클라이언트 IP 주소를 보다 정확하게 식별할 수 있습니다. <code>None</code>으로 설정하면 덜 엄격한 IP 매칭이 throttle 클래스에서 사용됩니다.  </p>
+<p>Default: <code>None</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../Testing/" class="btn btn-neutral" title="Testing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Testing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
